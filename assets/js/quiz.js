@@ -6,31 +6,31 @@
     escala: {
       name: 'Escala Estratégica',
       blurb:
-        'Tu negocio ya factura y funciona — ahora se trata de que funcione sin que dependa de vos en cada paso. Un sistema de 8 módulos para dejar de ser el cuello de botella.',
+        'Basta de ser el límite de tu propio negocio. Facturás bien, pero si vos parás, para todo. Esto no se arregla con más horas tuyas — se arregla con un sistema. 8 módulos para construirlo ya.',
       href: 'programas/escala-estrategica.html',
     },
     rediseñarte: {
       name: 'Rediseñarte 10X',
       blurb:
-        'No se trata solo de tu negocio — es tu momento de repensar qué querés de tu vida y de tu trabajo. Un proceso grupal transformacional, a tu ritmo.',
+        'No es un ajuste de negocio — es tu momento de replantearte todo. Seguir postergando esto tiene un costo, y lo estás pagando cada día que sigue sin sentido. Es ahora.',
       href: 'programas/rediseñarte-10x.html',
     },
     mentoria: {
       name: 'Mentoría Personalizada',
       blurb:
-        'Tenés algo puntual dándote vueltas. La solución no es un curso genérico: es un acompañamiento 1 a 1, hecho a tu medida.',
+        'Tenés una situación puntual trabada hace demasiado tiempo, y ningún curso genérico te la va a resolver. Necesitás a alguien mirando exactamente tu caso, ya.',
       href: 'programas/mentoria-personalizada.html',
     },
     kit: {
       name: 'Kit de Herramientas Esenciales',
       blurb:
-        'Antes de escalar nada, empecemos por sacarte el miedo a las herramientas digitales clave. Gratis y con módulos cortos.',
+        'Le seguís teniendo miedo a herramientas que en minutos podrías dominar. Cada día que lo evitás, tu negocio se queda un paso atrás. Es gratis — no hay excusa para seguir postergándolo.',
       href: 'programas/kit-herramientas.html',
     },
     redmaestra: {
       name: 'Red Maestra',
       blurb:
-        'Tu negocio no necesita más esfuerzo tuyo — necesita mejores conexiones. Un curso gratuito para construir capital social real.',
+        'No te falta esfuerzo — te falta red. Seguís sola/o resolviendo lo que otros resuelven con un contacto. Esto se corrige, y es gratis: no tenés excusa para no arrancar hoy.',
       href: 'programas/red-maestra.html',
     },
   };
@@ -159,7 +159,7 @@
     document.getElementById('quizResultBlurb').textContent = program.blurb;
     var cta = document.getElementById('quizResultCta');
     cta.href = program.href;
-    cta.textContent = 'Ver ' + program.name;
+    cta.textContent = 'Quiero ' + program.name + ' ya';
     showScreen('result');
   }
 

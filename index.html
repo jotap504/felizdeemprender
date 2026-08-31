@@ -37,6 +37,12 @@
   .quiz-card .eyebrow{ color:var(--gold-bright); }
   .quiz-card .eyebrow::before{ background:var(--gold-bright); }
   .quiz-screen h2{ color:#fff; font-size:clamp(26px,3vw,36px); margin-top:16px; }
+  .quiz-verdict{
+    margin-top:22px; display:inline-block; background:var(--gold-bright); color:var(--plum-deep);
+    font-family:'Libre Franklin',sans-serif; font-weight:800; font-size:15px; letter-spacing:0.16em;
+    text-transform:uppercase; padding:8px 18px;
+  }
+  [data-screen="result"] h2{ font-size:clamp(34px,4.6vw,54px); margin-top:14px; }
   .quiz-lede{ margin-top:16px; font-size:16px; color:rgba(255,255,255,0.72); max-width:52ch; }
   .quiz-actions{ display:flex; gap:16px; margin-top:30px; flex-wrap:wrap; }
   .quiz-card .btn-ghost{ border-color:rgba(255,255,255,0.5); color:#fff; }
@@ -214,10 +220,11 @@
 
       <div class="quiz-screen" data-screen="result" hidden>
         <span class="eyebrow">Así terminó tu día</span>
+        <div class="quiz-verdict">Necesitás</div>
         <h2 id="quizResultName"></h2>
         <p class="quiz-lede" id="quizResultBlurb"></p>
         <div class="quiz-actions">
-          <a href="#" class="btn btn-primary" id="quizResultCta">Ver programa</a>
+          <a href="#" class="btn btn-gold" id="quizResultCta">Ver programa</a>
           <a href="#programas" class="btn btn-ghost">Ver los 5 programas</a>
         </div>
         <button type="button" class="quiz-restart" id="quizRestart">Vivir otro día</button>
