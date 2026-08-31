@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Kit de Herramientas Esenciales — Feliz de Emprender</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Perdé el miedo al uso de las herramientas clave para tu negocio. Módulos cortos y accionables, 100% gratis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Libre+Franklin:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+<style>
+  .p-hero{ padding:150px 0 90px; }
+  .p-hero-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; align-items:start; gap:40px; }
+  .p-hero h1{ font-size:clamp(30px,4vw,46px); margin-top:16px; line-height:1.1; }
+  .p-hero .lede{ margin-top:18px; font-size:16.5px; max-width:50ch; }
+  .lead-hero h3{ font-size:19px; margin-top:4px; }
+  .lead-hero p{ font-size:14.5px; }
+  .lead-hero .gmail-note{ font-size:12px; color:var(--ink-soft); background:#fff; padding:10px 14px; border:1px solid var(--mist-line); }
+
+  .module{ padding:90px 0; }
+  .module-head{ max-width:640px; }
+  .module-head h2{ font-size:clamp(28px,3.2vw,40px); margin-top:16px; }
+  .module-card{
+    margin-top:46px; background:#fff; border:1px solid var(--mist-line);
+    padding:36px; display:flex; align-items:flex-start; gap:26px; max-width:720px;
+  }
+  .module-card .tag{
+    font-family:'Fraunces',serif; font-weight:600; font-size:22px; color:var(--plum);
+    border:1px solid var(--mist-line); border-radius:50%; width:52px; height:52px;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .module-card h3{ font-size:19px; }
+  .module-card p{ margin-top:8px; font-size:14.5px; }
+  .module-note{ margin-top:20px; font-size:13.5px; color:var(--ink-soft); max-width:640px; }
+
+  .benefits{ padding:90px 0; }
+  .benefits-grid{ margin-top:46px; display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.12); }
+  .benefit-card{ background:var(--plum-deep); padding:28px 24px; display:flex; flex-direction:column; gap:10px; }
+  .benefit-card .ic{ width:26px; height:26px; color:var(--gold-bright); }
+  .benefit-card h3{ color:#fff; font-size:15px; font-family:'Libre Franklin',sans-serif; font-weight:800; }
+  .benefit-card p{ font-size:13.5px; color:rgba(255,255,255,0.72); }
+
+  .final-cta{ padding:110px 0; text-align:center; }
+  .final-cta h2{ font-size:clamp(28px,3.6vw,44px); max-width:18ch; margin:16px auto 0; }
+  .final-cta .sub{ margin:20px auto 0; max-width:52ch; }
+  .final-cta .hero-actions{ justify-content:center; margin-top:30px; }
+
+  @media (max-width:980px){
+    .p-hero-grid{ grid-template-columns:1fr; }
+    .benefits-grid{ grid-template-columns:1fr; }
+  }
+  @media (max-width:600px){
+    .wrap{ padding:0 20px; }
+    .module-card{ flex-direction:column; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav" id="siteNav">
+  <div class="wrap nav-inner">
+    <a href="../index.html" class="wordmark">Feliz de Emprender<span>Mentoras de emprendedoras</span></a>
+    <nav class="links" id="navLinks">
+      <a href="../index.html#programas">Programas</a>
+      <a href="../index.html#nosotras">Nosotras</a>
+      <a href="../index.html#recursos">Recursos</a>
+      <a href="#acceder" class="cta-link">Acceso gratis</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="p-hero">
+  <div class="wrap p-hero-grid">
+    <div>
+      <div class="crumb"><a href="../index.html">Feliz de Emprender</a><span>/</span><span>Kit de Herramientas Esenciales</span></div>
+      <span class="eyebrow" style="margin-top:14px;">Primeros pasos digitales</span>
+      <h1>Perdé el miedo al uso de las herramientas clave para tu negocio.</h1>
+      <p class="lede">Tu atajo al éxito digital: módulos cortos y accionables para dejar de postergar lo que ya sabés que tenés que aprender.</p>
+    </div>
+    <div class="lead-hero reveal">
+      <span class="free-tag">100% Gratis</span>
+      <h3>Acceso instantáneo</h3>
+      <p>Empezá hoy mismo con el primer módulo disponible.</p>
+      <a href="https://fastoria.com.ar/v/N0VHmdezrkt1Xsg1DZVL?v=2" class="btn btn-primary btn-block">Quiero mi acceso gratis</a>
+      <p class="gmail-note">⚠️ La plataforma funciona con cuenta de Google — necesitás un correo @gmail.com para acceder.</p>
+    </div>
+  </div>
+</section>
+
+<section class="module">
+  <div class="wrap">
+    <div class="module-head reveal">
+      <span class="eyebrow">Módulos cortos y accionables</span>
+      <h2>Empezá por acá</h2>
+    </div>
+    <div class="module-card reveal">
+      <span class="tag">01</span>
+      <div>
+        <h3>Introducción a Canva</h3>
+        <p>Perdé el miedo a diseñar tus propias piezas para redes, presentaciones y materiales de tu negocio — sin depender de un diseñador para cada pieza chica.</p>
+      </div>
+    </div>
+    <p class="module-note">Este kit se sigue ampliando con nuevas herramientas — el módulo de Canva ya está disponible y es tu punto de partida.</p>
+  </div>
+</section>
+
+<section class="benefits band-dark">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-bottom:0;">
+      <div>
+        <span class="eyebrow">Por qué empezar acá</span>
+        <h2>Tu atajo al éxito digital</h2>
+      </div>
+    </div>
+    <div class="benefits-grid reveal">
+      <div class="benefit-card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l2.5 5.5L20 9l-4 4 1 5.5L12 16l-5 2.5L8 13l-4-4 5.5-.5z"/></svg>
+        <h3>Sin curva de entrada</h3>
+        <p>Módulos cortos, pensados para aplicar en minutos, no en semanas.</p>
+      </div>
+      <div class="benefit-card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+        <h3>Accionable ya</h3>
+        <p>Salís de cada módulo con algo hecho, no solo con teoría.</p>
+      </div>
+      <div class="benefit-card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 4v16h16"/><path d="M8 15l3-3 3 2 4-5"/></svg>
+        <h3>Base para todo lo demás</h3>
+        <p>Estas herramientas sostienen cualquier otro programa que hagas con nosotras.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta" id="acceder">
+  <div class="wrap reveal">
+    <span class="eyebrow">Sin excusas para empezar</span>
+    <h2>Tu kit te espera, gratis y al instante.</h2>
+    <p class="sub">Completá tus datos con tu cuenta de Gmail y accedé al primer módulo ahora mismo.</p>
+    <div class="hero-actions">
+      <a href="https://fastoria.com.ar/v/N0VHmdezrkt1Xsg1DZVL?v=2" class="btn btn-primary">Quiero mi acceso gratis</a>
+      <a href="https://web.whatsapp.com/send?phone=541157324441&text=Tengo%20una%20duda%20sobre%20el%20Kit%20de%20Herramientas" class="btn btn-ghost">Tengo una duda</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="../index.html" class="wordmark">Feliz de Emprender<span>Mentoras de emprendedoras</span></a>
+      <p>Cinco programas, un mismo destino: que tu negocio te dé la vida que querés.</p>
+      <div class="social-row">
+        <a href="https://instagram.com/felizdeemprender" aria-label="Instagram">IG</a>
+        <a href="https://linkedin.com/company/felizdeemprender" aria-label="LinkedIn">in</a>
+        <a href="https://tiktok.com/@felizdeemprender" aria-label="TikTok">TT</a>
+        <a href="https://youtube.com/channel/UCKmkd4DeEsYsj3PCHIky1yw" aria-label="YouTube">YT</a>
+      </div>
+    </div>
+    <div>
+      <h4>Programas</h4>
+      <ul>
+        <li><a href="escala-estrategica.html">Escala Estratégica</a></li>
+        <li><a href="rediseñarte-10x.html">Rediseñarte 10X</a></li>
+        <li><a href="mentoria-personalizada.html">Mentoría Personalizada</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Gratuitos</h4>
+      <ul>
+        <li><a href="red-maestra.html">Red Maestra</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="https://web.whatsapp.com/send?phone=541157324441">WhatsApp</a></li>
+        <li><a href="mailto:hola@felizdeemprender.com">Email</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© B Process | Mentoras de emprendedoras. Todos los derechos reservados.</span>
+    <span>Buenos Aires, Argentina</span>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

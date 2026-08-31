@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Escala Estratégica — Feliz de Emprender</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="El camino para dejar de ser el cuello de botella de tu propio negocio. 8 módulos + bonuses para pasar de la dependencia total a un crecimiento ordenado y sostenible.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Libre+Franklin:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+<style>
+  .p-hero{ padding:150px 0 80px; text-align:center; }
+  .p-hero .crumb{ justify-content:center; margin-bottom:26px; }
+  .p-hero h1{ font-size:clamp(32px,4.6vw,54px); max-width:20ch; margin:18px auto 0; }
+  .p-hero .lede{ margin:22px auto 0; max-width:56ch; font-size:18px; text-align:center; }
+  .p-hero .hero-actions{ justify-content:center; margin-top:32px; }
+  .p-hero-photo{ margin:50px auto 0; max-width:820px; border-radius:2px; overflow:hidden; aspect-ratio:16/8; }
+  .p-hero-photo img{ width:100%; height:100%; object-fit:cover; }
+
+  .video-teaser{ padding:0 0 90px; text-align:center; }
+  .video-teaser .frame{
+    margin:34px auto 0; max-width:300px; aspect-ratio:9/16; border-radius:4px; overflow:hidden;
+    box-shadow:0 30px 60px -30px rgba(43,10,40,0.4); border:1px solid var(--mist-line);
+  }
+  .video-teaser video{ width:100%; height:100%; object-fit:cover; display:block; }
+
+  .benefits{ padding:90px 0; }
+  .benefits-grid{ margin-top:50px; display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--mist-line); border:1px solid var(--mist-line); }
+  .benefit-card{ background:#fff; padding:30px 26px; display:flex; flex-direction:column; gap:12px; }
+  .benefit-card .ic{ width:30px; height:30px; color:var(--plum); }
+  .benefit-card h3{ font-size:16.5px; font-family:'Libre Franklin',sans-serif; font-weight:800; }
+  .benefit-card p{ font-size:14px; }
+
+  .curriculum{ padding:90px 0; }
+  .curriculum-head{ max-width:640px; }
+  .curriculum-head h2{ font-size:clamp(28px,3.2vw,40px); margin-top:16px; }
+  .curriculum .accordion{ margin-top:46px; }
+
+  .extras{ padding:90px 0; }
+  .extras-grid{ margin-top:46px; display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--mist-line); border:1px solid var(--mist-line); }
+  .extra-card{ background:var(--paper); padding:28px 22px; display:flex; flex-direction:column; gap:10px; }
+  .extra-card .bono-tag{ font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); }
+  .extra-card h3{ font-size:14.5px; font-family:'Libre Franklin',sans-serif; font-weight:800; }
+  .extra-card p{ font-size:12.5px; }
+
+  .mentors{ padding:90px 0; }
+  .mentors-grid{ display:grid; grid-template-columns:0.7fr 1.3fr; gap:56px; align-items:center; }
+  .mentors-photo{ border-radius:2px; overflow:hidden; aspect-ratio:1/1.05; }
+  .mentors-photo img{ width:100%; height:100%; object-fit:cover; object-position:top center; }
+  .mentors h2{ font-size:clamp(26px,3vw,36px); margin-top:14px; }
+  .mentors p{ margin-top:18px; font-size:16px; max-width:56ch; }
+
+  .faq{ padding:90px 0; }
+  .faq-head{ max-width:600px; margin:0 auto 46px; text-align:center; }
+  .faq-head h2{ font-size:clamp(28px,3.2vw,38px); margin-top:16px; }
+  .faq .accordion{ max-width:820px; margin:0 auto; }
+
+  .final-cta{ padding:110px 0; text-align:center; }
+  .final-cta h2{ font-size:clamp(28px,3.6vw,44px); max-width:18ch; margin:16px auto 0; }
+  .final-cta .sub{ margin:20px auto 0; max-width:52ch; }
+  .final-cta .price-block{ margin:40px auto 0; max-width:520px; }
+  .final-cta .hero-actions{ justify-content:center; margin-top:30px; }
+  .final-cta .disclaimer{ margin:26px auto 0; max-width:640px; font-size:12px; color:rgba(255,255,255,0.45); }
+
+  @media (max-width:980px){
+    .benefits-grid{ grid-template-columns:1fr 1fr; }
+    .extras-grid{ grid-template-columns:1fr 1fr; }
+    .mentors-grid{ grid-template-columns:1fr; }
+    .mentors-photo{ max-width:340px; margin:0 auto; }
+  }
+  @media (max-width:600px){
+    .wrap{ padding:0 20px; }
+    .benefits-grid{ grid-template-columns:1fr; }
+    .extras-grid{ grid-template-columns:1fr; }
+    .acc-panel-inner{ padding-left:26px !important; }
+    .countdown{ flex-wrap:wrap; justify-content:center; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav" id="siteNav">
+  <div class="wrap nav-inner">
+    <a href="../index.html" class="wordmark">Feliz de Emprender<span>Mentoras de emprendedoras</span></a>
+    <nav class="links" id="navLinks">
+      <a href="../index.html#programas">Programas</a>
+      <a href="../index.html#nosotras">Nosotras</a>
+      <a href="../index.html#recursos">Recursos</a>
+      <a href="#inscribirme" class="cta-link">Inscribirme</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="p-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="../index.html">Feliz de Emprender</a><span>/</span><span>Escala Estratégica</span></div>
+    <span class="eyebrow">Para consultores, agencias y solopreneurs</span>
+    <h1>Facturás bien. Pero seguís siendo el límite de tu propio negocio.</h1>
+    <p class="lede">Muchos profesionales exitosos llegan a un punto donde su propio éxito se convierte en su mayor obstáculo: cada nuevo cliente significa más horas tuyas, y eso no es escalar. Nosotras te entendemos, porque lo vivimos y lo superamos.</p>
+    <div class="hero-actions">
+      <a href="#inscribirme" class="btn btn-primary">Quiero escalar mi negocio ahora</a>
+      <a href="#curriculum" class="btn btn-ghost">Ver los 8 módulos</a>
+    </div>
+    <div class="p-hero-photo reveal">
+      <img src="https://felizdeemprender.com/wp-content/uploads/2023/06/mentoria-home-2.jpg" alt="Mentoría de Escala Estratégica">
+    </div>
+  </div>
+</section>
+
+<section class="video-teaser reveal">
+  <div class="wrap">
+    <span class="eyebrow">Resumen en 30 segundos</span>
+    <div class="frame">
+      <video src="../assets/video/teaser-escala-estrategica.mp4" autoplay muted loop playsinline controls></video>
+    </div>
+  </div>
+</section>
+
+<section class="benefits">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">El camino para dejar de ser el cuello de botella</span>
+        <h2>Lo que vas a lograr con Escala Estratégica</h2>
+      </div>
+      <p class="sub">ESCALA ESTRATÉGICA te ofrece una metodología probada para transformar tu negocio, pasando de la dependencia total a un crecimiento ordenado y sostenible. No es magia, es un sistema.</p>
+    </div>
+    <div class="benefits-grid reveal">
+      <div class="benefit-card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+        <h3>Liberar tu tiempo</h3>
+        <p>Dejá de ser el eslabón principal de cada proceso y recuperá horas para vos.</p>
+      </div>
+      <div class="benefit-card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+        <h3>Crecimiento predecible</h3>
+        <p>Implementá sistemas que te permitan delegar y expandirte sin perder calidad ni control.</p>
+      </div>
+      <div class="benefit-card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5"/><path d="M12 20c0-3 2.5-5 5.5-5S23 17 23 20"/></svg>
+        <h3>Delegación efectiva</h3>
+        <p>Aprendé a construir un equipo que trabaje de forma autónoma y eficiente.</p>
+      </div>
+      <div class="benefit-card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>
+        <h3>Optimización de ventas</h3>
+        <p>Convertí más leads y construí embudos que funcionen sin tu intervención constante.</p>
+      </div>
+      <div class="benefit-card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+        <h3>Negocio a prueba de vos</h3>
+        <p>Creá una estructura que funcione incluso cuando no estés presente, aumentando su valor.</p>
+      </div>
+      <div class="benefit-card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l2.5 5.5L20 9l-4 4 1 5.5L12 16l-5 2.5L8 13l-4-4 5.5-.5z"/></svg>
+        <h3>Visión y plan de largo plazo</h3>
+        <p>Trazá un camino hasta esa meta que te propusiste, alineando el negocio con tus necesidades.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="curriculum band-dark" id="curriculum">
+  <div class="wrap">
+    <div class="curriculum-head reveal">
+      <span class="eyebrow">Tu recorrido hacia un negocio escalable</span>
+      <h2>Un proceso lógico y accionable, módulo a módulo.</h2>
+      <p style="margin-top:16px; max-width:56ch;">Cada módulo te acerca un paso más a ese negocio que soñás: uno que crece sin devorarte.</p>
+    </div>
+    <div class="accordion reveal">
+      <div class="acc-item">
+        <button class="acc-trigger"><span class="tag">·</span><span class="q-text">Bienvenida</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="acc-panel"><div class="acc-panel-inner">Bienvenida al programa, onboarding, estructura, procesos internos, herramientas y cómo usarlas.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger"><span class="tag">1</span><span class="q-text">Diagnóstico profundo</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="acc-panel"><div class="acc-panel-inner">Rueda de negocios (8 áreas), diagnóstico por 4 cuadrantes (dependencia del fundador × previsibilidad de ingresos), identificación de los 4 cuellos de botella típicos: capacidad personal, procesos no sistematizados, propuesta de valor poco diferenciada, precio atado a horas.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger"><span class="tag">2</span><span class="q-text">Visión de largo plazo</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="acc-panel"><div class="acc-panel-inner">Visión a 5 años del negocio, objetivos a 12 meses, arqueología inversa (del futuro deseado hacia las decisiones de hoy) — un negocio que no dependa linealmente de tus horas.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger"><span class="tag">3</span><span class="q-text">Estrategia de crecimiento</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="acc-panel"><div class="acc-panel-inner">Definición de cliente ideal, propuesta de valor diferenciada, diseño de la escalera de valor: servicios que permiten crecer en facturación sin crecer proporcionalmente en horas propias.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger"><span class="tag">4</span><span class="q-text">Marca y comunicación</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="acc-panel"><div class="acc-panel-inner">Posicionamiento, marca personal del profesional/consultor, canales estratégicos y presencia diferenciada — pensado para generar demanda sin depender de tu disponibilidad constante para vender.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger"><span class="tag">5</span><span class="q-text">Gestión inteligente de recursos</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="acc-panel"><div class="acc-panel-inner">Tiempo, estructura y delegación en un negocio chico sin equipo fijo: qué se sistematiza, qué se terceriza y qué no se delega nunca (estrategia, decisiones clave, relación con clientes clave).</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger"><span class="tag">6</span><span class="q-text">Números que escalan</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="acc-panel"><div class="acc-panel-inner">Rentabilidad real por servicio/cliente, fijación de precios que desacopla ingreso de horas, indicadores clave del negocio, meta mensual y simulador de escenarios de precio.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger"><span class="tag">7</span><span class="q-text">Diseño del camino</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="acc-panel"><div class="acc-panel-inner">Plan de 90 días y roadmap trimestral para poner en marcha lo definido en los módulos anteriores.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger"><span class="tag">8</span><span class="q-text">Escalamiento sostenible</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="acc-panel"><div class="acc-panel-inner">Consolidación del sistema construido, liderazgo del negocio en su nueva etapa — ya no solo "hacer" sino también dirigir — y cierre con visión a futuro.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger"><span class="tag">B</span><span class="q-text">Bonus · Patrones de abundancia</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="acc-panel"><div class="acc-panel-inner">Revisión profunda de tu relación con la abundancia. Creación de nuevas formas de pensar y actuar en relación a la vida.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger"><span class="tag">B</span><span class="q-text">Bonus · Finanzas personales y del negocio</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="acc-panel"><div class="acc-panel-inner">Conocimiento e implementación de estrategias financieras para emprendedores y profesionales independientes.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger"><span class="tag">B</span><span class="q-text">Bonus · Crea, Publica y Vende</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="acc-panel"><div class="acc-panel-inner">Guía rápida para gestión de contenido en redes sociales.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger"><span class="tag">B</span><span class="q-text">Bonus · Develando la Pasión</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="acc-panel"><div class="acc-panel-inner">Bonus de adquisición para reconectar con el propósito de tu negocio.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger"><span class="tag">B</span><span class="q-text">Bonus · Encuentro Individual</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="acc-panel"><div class="acc-panel-inner">Disponible según condiciones de la promoción: encuentro individual para revisar tu plan de acción.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="extras">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Extras exclusivos</span>
+        <h2>Para potenciar tu escala</h2>
+      </div>
+    </div>
+    <div class="extras-grid reveal">
+      <div class="extra-card">
+        <span class="bono-tag">Bono 1</span>
+        <h3>Plantillas de procesos</h3>
+        <p>Documentos listos para usar y adaptar, desde onboarding de clientes hasta gestión de proyectos.</p>
+      </div>
+      <div class="extra-card">
+        <span class="bono-tag">Bono 2</span>
+        <h3>Guías de delegación efectiva</h3>
+        <p>Checklists y frameworks para delegar tareas clave sin perder el control ni la calidad.</p>
+      </div>
+      <div class="extra-card">
+        <span class="bono-tag">Bono 3</span>
+        <h3>Comunidad privada</h3>
+        <p>Conectate con otros profesionales en tu misma sintonía, compartí experiencias y obtené soporte.</p>
+      </div>
+      <div class="extra-card">
+        <span class="bono-tag">Bono 4</span>
+        <h3>Q&amp;A en vivo</h3>
+        <p>Resolvé tus dudas directamente con Ari y Lu para aplicar todo correctamente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mentors band-dark">
+  <div class="wrap mentors-grid reveal">
+    <div class="mentors-photo">
+      <img src="https://felizdeemprender.com/wp-content/uploads/2023/06/B-Process-home.jpg" alt="Ari y Lu Belotti">
+    </div>
+    <div>
+      <span class="eyebrow">Tus guías en este viaje</span>
+      <h2>Conocé a Ari y Lu Belotti</h2>
+      <p>Durante años, como vos, estuvimos atrapadas en la rueda de nuestros propios negocios, donde cada crecimiento significaba más horas y menos vida. Desarrollamos y probamos esta metodología con cientos de emprendedores, agencias y consultores que lograron transformar su realidad. No solo te enseñamos la teoría: te compartimos la experiencia real y las herramientas que usamos a diario para escalar nuestros propios proyectos y los de nuestros clientes.</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="faq-head reveal">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2>Antes de inscribirte</h2>
+    </div>
+    <div class="accordion reveal">
+      <div class="acc-item">
+        <button class="acc-trigger"><span class="tag">?</span><span class="q-text">¿Para quién es Escala Estratégica?</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="acc-panel"><div class="acc-panel-inner no-indent">Para consultores, dueños de agencias, estudios, solopreneurs y profesionales independientes que ya facturan pero se sienten estancados por la dependencia de su tiempo.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger"><span class="tag">?</span><span class="q-text">¿Cuánto tiempo necesito dedicarle?</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="acc-panel"><div class="acc-panel-inner no-indent">El programa está diseñado para que avances a tu ritmo, con módulos que se completan en semanas. La implementación es lo que te dará resultados.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger"><span class="tag">?</span><span class="q-text">¿Cuál es el formato del curso?</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="acc-panel"><div class="acc-panel-inner no-indent">Es un programa 100% online, con clases grabadas, materiales descargables y acceso a la comunidad privada.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger"><span class="tag">?</span><span class="q-text">¿Cómo puedo pagar?</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="acc-panel"><div class="acc-panel-inner no-indent">Ofrecemos diversas opciones de pago para que la inversión no sea un impedimento para tu crecimiento. Consultanos por planes de financiación.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta band-dark" id="inscribirme">
+  <div class="wrap reveal">
+    <span class="eyebrow">Última oportunidad para acceder al precio especial</span>
+    <h2>No dejes pasar la oportunidad de transformar tu realidad.</h2>
+    <p class="sub">El valor de Escala Estratégica es de $1.200.000. Si tomás acción hoy, podés asegurar tu lugar con un precio promocional por tiempo limitado. ¡Los cupos son limitados!</p>
+    <div class="price-block">
+      <div class="price-row">
+        <span class="price-anchor">$1.200.000</span>
+        <span class="price-now">$600.000</span>
+      </div>
+      <span class="price-note">Inversión única · acceso inmediato</span>
+      <div class="countdown" data-duration-hours="72">
+        <div class="unit"><span class="num" data-unit="d">--</span><span class="label">Días</span></div>
+        <div class="unit"><span class="num" data-unit="h">--</span><span class="label">Hs</span></div>
+        <div class="unit"><span class="num" data-unit="m">--</span><span class="label">Min</span></div>
+        <div class="unit"><span class="num" data-unit="s">--</span><span class="label">Seg</span></div>
+      </div>
+      <a href="https://fastoria.com.ar/v/D1Ho7dsMieYxXgiOUfSM?v=2" class="btn btn-gold btn-block">Inscribirme ahora</a>
+      <a href="https://web.whatsapp.com/send?phone=541157324441&text=Tengo%20una%20duda%20sobre%20Escala%20Estrat%C3%A9gica" class="btn btn-ghost btn-block" style="margin-top:-6px;">¿Dudas antes de inscribirte? Escribinos</a>
+    </div>
+    <p class="disclaimer">Los resultados expuestos no son una promesa ni garantía de ganancias futuras. El éxito requiere esfuerzo, tiempo y dedicación. Este sitio no es parte del sitio web de Meta, Facebook o Facebook Inc.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="../index.html" class="wordmark">Feliz de Emprender<span>Mentoras de emprendedoras</span></a>
+      <p>Cinco programas, un mismo destino: que tu negocio te dé la vida que querés.</p>
+      <div class="social-row">
+        <a href="https://instagram.com/felizdeemprender" aria-label="Instagram">IG</a>
+        <a href="https://linkedin.com/company/felizdeemprender" aria-label="LinkedIn">in</a>
+        <a href="https://tiktok.com/@felizdeemprender" aria-label="TikTok">TT</a>
+        <a href="https://youtube.com/channel/UCKmkd4DeEsYsj3PCHIky1yw" aria-label="YouTube">YT</a>
+      </div>
+    </div>
+    <div>
+      <h4>Programas</h4>
+      <ul>
+        <li><a href="rediseñarte-10x.html">Rediseñarte 10X</a></li>
+        <li><a href="mentoria-personalizada.html">Mentoría Personalizada</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Gratuitos</h4>
+      <ul>
+        <li><a href="kit-herramientas.html">Kit de Herramientas</a></li>
+        <li><a href="red-maestra.html">Red Maestra</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="https://web.whatsapp.com/send?phone=541157324441">WhatsApp</a></li>
+        <li><a href="mailto:hola@felizdeemprender.com">Email</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© B Process | Mentoras de emprendedoras. Todos los derechos reservados.</span>
+    <span>Buenos Aires, Argentina</span>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

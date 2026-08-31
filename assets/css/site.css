@@ -1,0 +1,263 @@
+/* ===================================================================
+   Feliz de Emprender — shared design system
+   Tokens, base type, nav, buttons, cards used across every page.
+   Page-specific layout lives in each page's own <style> block.
+=================================================================== */
+
+:root{
+  --ink:#241220;
+  --paper:#F8F1EF;
+  --plum:#7A0E63;
+  --plum-bright:#9A1680;
+  --plum-deep:#2B0A28;
+  --plum-deep-2:#3A1136;
+  --gold:#C89B3C;
+  --gold-bright:#DDB65B;
+  --mist:#E9D6DE;
+  --mist-line:#D8BFCB;
+  --ink-soft:#5B4756;
+  --danger:#B23A3A;
+  --success:#3A7A55;
+  --max:1180px;
+  --max-narrow:820px;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Libre Franklin', 'Segoe UI', Arial, sans-serif;
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3,.display{
+  font-family:'Fraunces', Georgia, serif;
+  font-weight:600;
+  letter-spacing:-0.01em;
+  text-wrap:balance;
+  margin:0;
+  color:var(--ink);
+}
+
+p{ margin:0; color:var(--ink-soft); }
+a{ color:inherit; }
+img{ display:block; max-width:100%; }
+:focus-visible{ outline:2.5px solid var(--gold); outline-offset:3px; }
+
+.wrap{ max-width:var(--max); margin:0 auto; padding:0 32px; }
+.wrap-narrow{ max-width:var(--max-narrow); margin:0 auto; padding:0 32px; }
+
+.eyebrow{
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:'Libre Franklin', sans-serif;
+  font-size:12.5px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase;
+  color:var(--plum);
+}
+.eyebrow::before{ content:""; width:22px; height:1.5px; background:var(--gold); display:inline-block; }
+.band-dark .eyebrow{ color:var(--gold-bright); }
+.band-dark .eyebrow::before{ background:var(--gold-bright); }
+
+/* ---------- NAV ---------- */
+header.site-nav{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:20px 0;
+  transition:background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+}
+header.site-nav.scrolled{
+  background:rgba(248,241,239,0.92); backdrop-filter:blur(8px);
+  padding:13px 0; box-shadow:0 1px 0 var(--mist-line);
+}
+.nav-inner{ display:flex; align-items:center; justify-content:space-between; }
+.wordmark{ font-family:'Fraunces', serif; font-style:italic; font-weight:600; font-size:24px; color:var(--ink); text-decoration:none; line-height:1; }
+.wordmark span{ display:block; font-family:'Libre Franklin',sans-serif; font-style:normal; font-weight:700; font-size:9.5px; letter-spacing:0.22em; text-transform:uppercase; color:var(--plum); margin-top:3px; }
+nav.links{ display:flex; align-items:center; gap:30px; }
+nav.links a{ font-size:14px; font-weight:600; text-decoration:none; color:var(--ink); position:relative; padding:4px 0; }
+nav.links a::after{ content:""; position:absolute; left:0; bottom:0; width:0; height:2px; background:var(--plum); transition:width 0.25s ease; }
+nav.links a:hover::after{ width:100%; }
+nav.links a.cta-link{ background:var(--plum); color:#fff; padding:10px 20px; border-radius:2px; }
+nav.links a.cta-link::after{ display:none; }
+nav.links a.cta-link:hover{ background:var(--plum-bright); }
+
+.menu-btn{ display:none; background:none; border:none; cursor:pointer; padding:6px; }
+.menu-btn span{ display:block; width:24px; height:2px; background:var(--ink); margin:5px 0; }
+
+@media (max-width:980px){
+  nav.links{ position:fixed; top:0; right:0; height:100vh; width:min(320px,80vw); background:var(--paper); flex-direction:column; align-items:flex-start; padding:100px 32px 32px; gap:26px; box-shadow:-10px 0 40px rgba(0,0,0,0.15); transform:translateX(100%); transition:transform .35s ease; }
+  nav.links.open{ transform:translateX(0); }
+  .menu-btn{ display:block; }
+}
+
+/* ---------- BUTTONS ---------- */
+.hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:14px 26px;
+  font-family:'Libre Franklin',sans-serif; font-weight:700; font-size:14.5px;
+  text-decoration:none; border-radius:2px; border:1.5px solid transparent;
+  cursor:pointer;
+  transition:transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color .2s ease;
+}
+.btn:hover{ transform:translateY(-2px); }
+.btn-primary{ background:var(--plum); color:#fff; }
+.btn-primary:hover{ background:var(--plum-bright); }
+.btn-ghost{ border-color:var(--ink); color:var(--ink); }
+.btn-ghost:hover{ border-color:var(--plum); color:var(--plum); }
+.btn-gold{ background:var(--gold); color:var(--plum-deep); }
+.btn-gold:hover{ background:var(--gold-bright); }
+.btn-block{ width:100%; justify-content:center; }
+.band-dark .btn-ghost{ border-color:rgba(255,255,255,0.5); color:#fff; }
+.band-dark .btn-ghost:hover{ border-color:var(--gold-bright); color:var(--gold-bright); }
+
+/* ---------- BANDS ---------- */
+.band-dark{ background:var(--plum-deep); color:#fff; }
+.band-dark p{ color:rgba(255,255,255,0.72); }
+.band-dark h2{ color:#fff; }
+
+/* ---------- SECTION HEAD ---------- */
+.section-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:30px; flex-wrap:wrap; margin-bottom:56px; }
+.section-head h2{ font-size:clamp(30px,3.4vw,42px); margin-top:16px; max-width:16ch; }
+.section-head .sub{ max-width:36ch; font-size:15.5px; }
+
+/* ---------- REVEAL ---------- */
+.reveal{ opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.reveal.in{ opacity:1; transform:translateY(0); }
+
+/* ---------- FOOTER ---------- */
+footer{ background:var(--plum-deep); border-top:1px solid rgba(255,255,255,0.1); padding:56px 0 34px; }
+.footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; }
+.footer-grid h4{ color:#fff; font-size:12px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:18px; }
+.footer-grid ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px; }
+.footer-grid a{ color:rgba(255,255,255,0.68); text-decoration:none; font-size:14px; }
+.footer-grid a:hover{ color:var(--gold-bright); }
+.footer-brand .wordmark{ color:#fff; }
+.footer-brand .wordmark span{ color:var(--gold-bright); }
+.footer-brand p{ margin-top:16px; font-size:14px; max-width:32ch; color:rgba(255,255,255,0.55); }
+.social-row{ display:flex; gap:14px; margin-top:20px; }
+.social-row a{
+  width:34px; height:34px; border-radius:50%; border:1px solid rgba(255,255,255,0.25);
+  display:flex; align-items:center; justify-content:center; color:#fff; text-decoration:none; font-size:13px;
+  transition:border-color .2s ease, color .2s ease;
+}
+.social-row a:hover{ border-color:var(--gold-bright); color:var(--gold-bright); }
+.footer-bottom{
+  margin-top:50px; padding-top:26px; border-top:1px solid rgba(255,255,255,0.1);
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+  font-size:12.5px; color:rgba(255,255,255,0.45);
+}
+@media (max-width:980px){ .footer-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:600px){ .footer-grid{ grid-template-columns:1fr; } }
+
+/* ===================================================================
+   NEW SHARED COMPONENTS — pricing, accordion, segmentation, lead card
+=================================================================== */
+
+/* ---------- PRICE BLOCK (Escala Estratégica) ---------- */
+.price-block{
+  background:var(--plum-deep-2);
+  border:1px solid rgba(221,182,91,0.35);
+  padding:34px 32px;
+  display:flex; flex-direction:column; gap:18px; align-items:center; text-align:center;
+}
+.price-row{ display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; justify-content:center; }
+.price-anchor{
+  font-family:'Libre Franklin',sans-serif; font-weight:600; font-size:20px;
+  color:rgba(255,255,255,0.45); text-decoration:line-through; font-variant-numeric:tabular-nums;
+}
+.price-now{
+  font-family:'Fraunces',serif; font-weight:600; font-size:clamp(38px,5vw,54px);
+  color:var(--gold-bright); font-variant-numeric:tabular-nums; line-height:1;
+}
+.price-note{ font-size:13px; color:rgba(255,255,255,0.6); letter-spacing:0.02em; }
+.countdown{ display:flex; gap:14px; }
+.countdown .unit{ display:flex; flex-direction:column; align-items:center; gap:4px; min-width:56px; }
+.countdown .num{
+  font-family:'Fraunces',serif; font-weight:600; font-size:28px; color:#fff;
+  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15);
+  padding:8px 0; width:100%; text-align:center; font-variant-numeric:tabular-nums;
+}
+.countdown .label{ font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.5); }
+
+/* ---------- ACCORDION (curriculum + FAQ) ---------- */
+.accordion{ display:flex; flex-direction:column; gap:1px; background:var(--mist-line); border:1px solid var(--mist-line); }
+.band-dark .accordion{ background:rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.12); }
+.acc-item{ background:var(--paper); }
+.band-dark .acc-item{ background:var(--plum-deep); }
+.acc-trigger{
+  width:100%; display:flex; align-items:center; justify-content:space-between; gap:20px;
+  padding:22px 26px; background:none; border:none; cursor:pointer; text-align:left;
+  font-family:'Libre Franklin',sans-serif; font-weight:700; font-size:16px; color:var(--ink);
+}
+.band-dark .acc-trigger{ color:#fff; }
+.acc-trigger .tag{
+  font-family:'Fraunces',serif; font-weight:600; font-size:13px; color:var(--plum);
+  border:1px solid var(--mist-line); border-radius:50%; width:30px; height:30px;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.band-dark .acc-trigger .tag{ color:var(--gold-bright); border-color:rgba(255,255,255,0.25); }
+.acc-trigger .q-text{ flex:1; }
+.acc-trigger .chev{ flex-shrink:0; width:18px; height:18px; transition:transform 0.25s ease; color:var(--plum); }
+.band-dark .acc-trigger .chev{ color:var(--gold-bright); }
+.acc-item.open .acc-trigger .chev{ transform:rotate(180deg); }
+.acc-panel{ max-height:0; overflow:hidden; transition:max-height 0.3s ease; }
+.acc-item.open .acc-panel{ max-height:400px; }
+.acc-panel-inner{ padding:0 26px 24px 76px; font-size:15px; color:var(--ink-soft); }
+.band-dark .acc-panel-inner{ color:rgba(255,255,255,0.72); }
+.acc-panel-inner.no-indent{ padding-left:26px; }
+
+/* ---------- SEGMENTATION (home "¿cuál es tu momento?") ---------- */
+.segment-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(210px,1fr)); gap:1px; background:var(--mist-line); border:1px solid var(--mist-line); }
+.segment-card{
+  background:#fff; padding:32px 26px; display:flex; flex-direction:column; gap:14px;
+  text-decoration:none; color:var(--ink);
+  transition:background 0.2s ease, transform 0.2s ease;
+}
+.segment-card:hover{ background:var(--mist); transform:translateY(-4px); }
+.segment-card .situation{ font-size:14.5px; color:var(--ink-soft); }
+.segment-card .arrow-to{ margin-top:auto; font-size:12.5px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; color:var(--plum); display:inline-flex; align-items:center; gap:6px; }
+@media (max-width:600px){ .segment-grid{ grid-template-columns:1fr; } }
+
+/* ---------- PROGRAM CATALOG CARDS (home) ---------- */
+.catalog-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+.catalog-card{
+  background:#fff; border:1px solid var(--mist-line); padding:30px 28px;
+  display:flex; flex-direction:column; gap:14px; text-decoration:none; color:var(--ink);
+  transition:transform 0.25s ease, box-shadow .25s ease;
+}
+.catalog-card:hover{ transform:translateY(-6px); box-shadow:0 24px 44px -26px rgba(43,10,40,0.28); }
+.catalog-card .price-tag{ font-size:12.5px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); background:var(--plum-deep); display:inline-flex; padding:5px 12px; align-self:flex-start; }
+.catalog-card .price-tag.free{ color:var(--plum); background:var(--mist); }
+.catalog-card h3{ font-size:21px; }
+.catalog-card .for-who{ font-size:13.5px; font-weight:700; color:var(--plum); }
+.catalog-card p.desc{ font-size:14.5px; }
+.catalog-card .go{ margin-top:auto; font-size:13px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink); display:inline-flex; align-items:center; gap:6px; }
+@media (max-width:980px){ .catalog-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:600px){ .catalog-grid{ grid-template-columns:1fr; } }
+
+/* ---------- LEAD-MAGNET CARD (free programs) ---------- */
+.lead-hero{
+  background:var(--mist); border:1px solid var(--mist-line);
+  padding:40px; display:flex; flex-direction:column; gap:16px; align-items:flex-start;
+}
+.lead-hero .free-tag{ font-size:12.5px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--plum); background:#fff; padding:6px 14px; }
+
+/* ---------- BENEFIT LIST (checkmarks) ---------- */
+.benefit-list{ display:flex; flex-direction:column; gap:16px; }
+.benefit-item{ display:flex; align-items:flex-start; gap:14px; }
+.benefit-item svg{ flex-shrink:0; width:22px; height:22px; color:var(--gold); margin-top:2px; }
+.band-dark .benefit-item svg{ color:var(--gold-bright); }
+.benefit-item span{ font-size:15.5px; color:var(--ink-soft); }
+.band-dark .benefit-item span{ color:rgba(255,255,255,0.8); }
+
+/* ---------- BREADCRUMB (program pages) ---------- */
+.crumb{ font-size:13px; color:var(--ink-soft); display:flex; gap:8px; align-items:center; }
+.crumb a{ text-decoration:none; color:var(--ink-soft); }
+.crumb a:hover{ color:var(--plum); }

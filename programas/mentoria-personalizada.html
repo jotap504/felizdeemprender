@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mentoría Personalizada — Feliz de Emprender</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Acompañamiento 1 a 1, adaptado a tu situación específica, con soporte humano y continuo en cada etapa de tu emprendimiento.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Libre+Franklin:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+<style>
+  .p-hero{ padding:150px 0 0; }
+  .p-hero-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; align-items:center; gap:44px; }
+  .p-hero h1{ font-size:clamp(34px,4.6vw,54px); margin-top:18px; line-height:1.08; }
+  .p-hero .lede{ margin-top:20px; font-size:17.5px; max-width:48ch; }
+  .p-hero-photo{ border-radius:2px; overflow:hidden; aspect-ratio:4/4.5; }
+  .p-hero-photo img{ width:100%; height:100%; object-fit:cover; object-position:top center; }
+
+  .goal{ padding:90px 0; }
+  .goal-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--mist-line); border:1px solid var(--mist-line); }
+  .goal-card{ background:#fff; padding:30px 26px; display:flex; flex-direction:column; gap:12px; }
+  .goal-card .ic{ width:28px; height:28px; color:var(--plum); }
+  .goal-card h3{ font-size:16px; font-family:'Libre Franklin',sans-serif; font-weight:800; }
+  .goal-card p{ font-size:14px; }
+
+  .process{ padding:90px 0; }
+  .process-head{ max-width:620px; }
+  .process-head h2{ font-size:clamp(28px,3.2vw,40px); margin-top:16px; }
+  .process-list{ margin-top:50px; display:flex; flex-direction:column; gap:1px; background:var(--mist-line); border:1px solid var(--mist-line); }
+  .process-item{ background:#fff; padding:26px 30px; display:flex; align-items:center; gap:24px; }
+  .process-item .tag{ font-family:'Fraunces',serif; font-weight:600; font-size:22px; color:var(--plum); flex-shrink:0; width:36px; }
+  .process-item p{ font-size:15px; }
+  .process-item p b{ color:var(--ink); }
+
+  .fit{ padding:90px 0; }
+  .fit-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--mist-line); border:1px solid var(--mist-line); }
+  .fit-card{ background:#fff; padding:34px; }
+  .fit-card h3{ font-size:17px; margin-bottom:16px; }
+
+  .t-strip{ padding:90px 0; }
+  .t-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.12); }
+  .t-card{ background:var(--plum-deep); padding:32px 30px; display:flex; flex-direction:column; gap:16px; }
+  .t-mark{ font-family:'Fraunces',serif; font-size:38px; line-height:1; color:var(--gold-bright); }
+  .t-quote{ font-size:15px; color:rgba(255,255,255,0.86); }
+  .t-name{ font-weight:700; color:#fff; font-size:14px; }
+  .t-role{ font-size:12px; color:rgba(255,255,255,0.55); margin-top:2px; }
+
+  .final-cta{ padding:110px 0; text-align:center; }
+  .final-cta h2{ font-size:clamp(28px,3.6vw,44px); max-width:18ch; margin:16px auto 0; }
+  .final-cta .sub{ margin:20px auto 0; max-width:52ch; }
+  .final-cta .hero-actions{ justify-content:center; margin-top:30px; }
+
+  @media (max-width:980px){
+    .p-hero-grid{ grid-template-columns:1fr; }
+    .p-hero-photo{ order:-1; max-width:380px; margin:0 auto; }
+    .goal-grid{ grid-template-columns:1fr 1fr; }
+    .fit-grid{ grid-template-columns:1fr; }
+    .t-grid{ grid-template-columns:1fr; }
+  }
+  @media (max-width:600px){
+    .wrap{ padding:0 20px; }
+    .goal-grid{ grid-template-columns:1fr; }
+    .process-item{ flex-direction:column; align-items:flex-start; gap:8px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav" id="siteNav">
+  <div class="wrap nav-inner">
+    <a href="../index.html" class="wordmark">Feliz de Emprender<span>Mentoras de emprendedoras</span></a>
+    <nav class="links" id="navLinks">
+      <a href="../index.html#programas">Programas</a>
+      <a href="../index.html#nosotras">Nosotras</a>
+      <a href="../index.html#recursos">Recursos</a>
+      <a href="#contacto" class="cta-link">Contacto</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="p-hero">
+  <div class="wrap p-hero-grid">
+    <div>
+      <div class="crumb"><a href="../index.html">Feliz de Emprender</a><span>/</span><span>Mentoría Personalizada</span></div>
+      <span class="eyebrow" style="margin-top:14px;">Acompañamiento 1 a 1</span>
+      <h1>Tu situación específica merece un plan hecho a tu medida.</h1>
+      <p class="lede">Un proceso de transformación individual, adaptado a vos, con acompañamiento humano y continuo en cada etapa de tu emprendimiento — no un programa genérico que tenés que adaptar vos.</p>
+      <div class="hero-actions" style="margin-top:30px;">
+        <a href="https://web.whatsapp.com/send?phone=541157324441&text=Quiero%20info%20de%20Mentor%C3%ADa%20Personalizada" class="btn btn-primary">Quiero mi mentoría</a>
+        <a href="#proceso" class="btn btn-ghost">Ver cómo funciona</a>
+      </div>
+    </div>
+    <div class="p-hero-photo reveal">
+      <img src="https://felizdeemprender.com/wp-content/uploads/2023/06/mentoria-home-2.jpg" alt="Mentoría personalizada Feliz de Emprender">
+    </div>
+  </div>
+</section>
+
+<section class="goal">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Por qué 1 a 1</span>
+        <h2>Porque tu negocio no es un caso genérico.</h2>
+      </div>
+      <p class="sub">Cada emprendimiento tiene su propio momento, su propia historia y sus propios bloqueos. La mentoría personalizada se construye alrededor de eso, no al revés.</p>
+    </div>
+    <div class="goal-grid reveal">
+      <div class="goal-card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3-6.5 7-6.5s7 2.5 7 6.5"/></svg>
+        <h3>100% a tu medida</h3>
+        <p>Trabajamos sobre tu situación real, no sobre un temario fijo pensado para todos.</p>
+      </div>
+      <div class="goal-card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 4v16h16"/><path d="M8 15l3-3 3 2 4-5"/></svg>
+        <h3>A tu ritmo</h3>
+        <p>Avanzamos según tu momento, no según el calendario de una cohorte grupal.</p>
+      </div>
+      <div class="goal-card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7-4.35-9.5-8.5C.8 8.6 2.6 5 6 5c2 0 3.3 1.1 4 2.2C10.7 6.1 12 5 14 5c3.4 0 5.2 3.6 3.5 7.5C15 16.65 12 21 12 21z"/></svg>
+        <h3>Acompañamiento continuo</h3>
+        <p>Soporte humano entre sesiones, no solo una hora de charla y listo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process band-dark" id="proceso">
+  <div class="wrap">
+    <div class="process-head reveal">
+      <span class="eyebrow">Cómo funciona</span>
+      <h2>El mismo método, aplicado solo a tu caso.</h2>
+    </div>
+    <div class="process-list reveal">
+      <div class="process-item" style="background:var(--plum-deep);"><span class="tag">1</span><p style="color:rgba(255,255,255,0.8);"><b style="color:#fff;">Meta —</b> definimos juntas tu objetivo a 3, 5 o 10 años.</p></div>
+      <div class="process-item" style="background:var(--plum-deep);"><span class="tag">2</span><p style="color:rgba(255,255,255,0.8);"><b style="color:#fff;">Propósito —</b> identificamos tu verdadera motivación de fondo.</p></div>
+      <div class="process-item" style="background:var(--plum-deep);"><span class="tag">3</span><p style="color:rgba(255,255,255,0.8);"><b style="color:#fff;">Mindset —</b> trabajamos los patrones de pensamiento que te frenan.</p></div>
+      <div class="process-item" style="background:var(--plum-deep);"><span class="tag">4</span><p style="color:rgba(255,255,255,0.8);"><b style="color:#fff;">Plan —</b> diseñamos tu camino de acción, paso a paso, con seguimiento.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="fit">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">¿Es para vos?</span>
+        <h2>Antes de escribirnos</h2>
+      </div>
+    </div>
+    <div class="fit-grid reveal">
+      <div class="fit-card">
+        <h3>Esta mentoría es para vos si...</h3>
+        <div class="benefit-list">
+          <div class="benefit-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Tenés una situación puntual que no encaja en un programa grupal genérico.</span></div>
+          <div class="benefit-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Preferís avanzar a tu propio ritmo, con seguimiento cercano entre sesiones.</span></div>
+          <div class="benefit-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Valorás la confidencialidad y la atención 100% dedicada a tu caso.</span></div>
+        </div>
+      </div>
+      <div class="fit-card">
+        <h3>Puede no ser el momento si...</h3>
+        <div class="benefit-list">
+          <div class="benefit-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Preferís el formato grupal y el intercambio con otras personas — mirá <a href="rediseñarte-10x.html" style="color:var(--plum); font-weight:700;">Rediseñarte 10X</a>.</span></div>
+          <div class="benefit-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Tu negocio ya factura bien y el problema es depender demasiado de tu tiempo — mirá <a href="escala-estrategica.html" style="color:var(--plum); font-weight:700;">Escala Estratégica</a>.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="t-strip band-dark">
+  <div class="wrap">
+    <span class="eyebrow reveal">Lo que dicen de trabajar con nosotras</span>
+    <div class="t-grid reveal" style="margin-top:36px;">
+      <div class="t-card">
+        <span class="t-mark">&ldquo;</span>
+        <p class="t-quote">Estaba perdida, sentía que quería arrancar con mi negocio personal y no sabía por dónde. Hoy tengo clara mi marca, mi cliente ideal y en qué enfocar mis acciones.</p>
+        <div><div class="t-name">Mirta Encinas</div><div class="t-role">Bioexistencia Consciente</div></div>
+      </div>
+      <div class="t-card">
+        <span class="t-mark">&ldquo;</span>
+        <p class="t-quote">Me ayudaron a ver las herramientas con las que contaba y yo no sabía. Ari y Lu son muy empáticas y expertas.</p>
+        <div><div class="t-name">Julieta Kuhn</div><div class="t-role">Asistente online</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta" id="contacto">
+  <div class="wrap reveal">
+    <span class="eyebrow">Demos el primer paso</span>
+    <h2>Contanos tu situación y armamos tu mentoría.</h2>
+    <p class="sub">Escribinos por WhatsApp: coordinamos una primera charla sin costo para entender tu momento y armar un plan a tu medida.</p>
+    <div class="hero-actions">
+      <a href="https://web.whatsapp.com/send?phone=541157324441&text=Quiero%20info%20de%20Mentor%C3%ADa%20Personalizada" class="btn btn-primary">Escribir por WhatsApp</a>
+      <a href="mailto:hola@felizdeemprender.com" class="btn btn-ghost">Escribir un email</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="../index.html" class="wordmark">Feliz de Emprender<span>Mentoras de emprendedoras</span></a>
+      <p>Cinco programas, un mismo destino: que tu negocio te dé la vida que querés.</p>
+      <div class="social-row">
+        <a href="https://instagram.com/felizdeemprender" aria-label="Instagram">IG</a>
+        <a href="https://linkedin.com/company/felizdeemprender" aria-label="LinkedIn">in</a>
+        <a href="https://tiktok.com/@felizdeemprender" aria-label="TikTok">TT</a>
+        <a href="https://youtube.com/channel/UCKmkd4DeEsYsj3PCHIky1yw" aria-label="YouTube">YT</a>
+      </div>
+    </div>
+    <div>
+      <h4>Programas</h4>
+      <ul>
+        <li><a href="escala-estrategica.html">Escala Estratégica</a></li>
+        <li><a href="rediseñarte-10x.html">Rediseñarte 10X</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Gratuitos</h4>
+      <ul>
+        <li><a href="kit-herramientas.html">Kit de Herramientas</a></li>
+        <li><a href="red-maestra.html">Red Maestra</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="https://web.whatsapp.com/send?phone=541157324441">WhatsApp</a></li>
+        <li><a href="mailto:hola@felizdeemprender.com">Email</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© B Process | Mentoras de emprendedoras. Todos los derechos reservados.</span>
+    <span>Buenos Aires, Argentina</span>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

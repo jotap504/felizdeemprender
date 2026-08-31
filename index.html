@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Feliz de Emprender</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mentoría y programas para emprendedores: Rediseñarte 10X, Mentoría Personalizada, Escala Estratégica y recursos gratuitos con Ari y Lu Belotti.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Libre+Franklin:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  .hero{ position:relative; padding:150px 0 0; overflow:hidden; }
+  .hero-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; align-items:center; gap:40px; }
+  .hero-copy h1{ font-size:clamp(40px, 5.4vw, 64px); line-height:1.05; margin-top:20px; }
+  .hero-copy h1 em{ font-style:italic; font-weight:500; color:var(--plum); }
+  .hero-copy .lede{ margin-top:22px; font-size:18px; max-width:44ch; }
+  .hero-copy .hero-actions{ margin-top:32px; }
+  .hero-photo .frame{ position:relative; border-radius:2px; overflow:hidden; aspect-ratio:4/4.4; }
+  .hero-photo img{ width:100%; height:100%; object-fit:cover; object-position:top center; }
+  .hero-photo .tag{
+    position:absolute; left:-18px; bottom:30px; background:var(--gold); color:var(--plum-deep);
+    font-family:'Libre Franklin',sans-serif; font-weight:800; font-size:12.5px; letter-spacing:0.03em;
+    padding:12px 20px; max-width:220px; line-height:1.35; box-shadow:0 14px 30px -12px rgba(43,10,40,0.5);
+  }
+  .hero-marquee{ margin-top:56px; border-top:1px solid var(--mist-line); padding:18px 0; }
+  .hero-marquee .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; }
+  .hero-marquee span{ font-size:12px; font-weight:700; letter-spacing:0.13em; text-transform:uppercase; color:var(--ink-soft); }
+
+  .segment{ padding:100px 0 110px; }
+  .segment-head{ max-width:640px; margin-bottom:50px; }
+  .segment-head h2{ font-size:clamp(28px,3.2vw,40px); margin-top:16px; }
+
+  .catalog{ padding:0 0 110px; }
+
+  .manifesto{ padding:100px 0; text-align:center; }
+  .manifesto blockquote{ margin:24px auto 0; max-width:760px; font-family:'Fraunces', serif; font-weight:500; font-size:clamp(24px, 3vw, 36px); line-height:1.3; }
+  .manifesto .signoff{ display:inline-block; margin-top:26px; font-family:'Fraunces', serif; font-style:italic; font-size:26px; color:var(--plum); }
+
+  .method{ padding:100px 0; }
+  .method-head{ max-width:620px; }
+  .method-head h2{ font-size:clamp(28px,3.2vw,40px); margin-top:16px; }
+  .method-rail{ margin-top:60px; display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; }
+  .method-rail::before{ content:""; position:absolute; left:6%; right:6%; top:26px; height:1px; background:linear-gradient(90deg, transparent, rgba(221,182,91,0.45) 10%, rgba(221,182,91,0.45) 90%, transparent); }
+  .step{ position:relative; padding:0 18px 0 0; }
+  .step .num{ width:50px; height:50px; border-radius:50%; background:var(--plum-deep-2); border:1.5px solid var(--gold-bright); color:var(--gold-bright); display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:600; font-size:18px; position:relative; z-index:2; }
+  .step h3{ color:#fff; margin-top:20px; font-family:'Libre Franklin',sans-serif; font-weight:800; text-transform:uppercase; font-size:14.5px; letter-spacing:0.03em; }
+  .step p{ margin-top:9px; font-size:14.5px; max-width:26ch; }
+
+  .testimonials{ padding:100px 0; }
+  .t-grid{ margin-top:56px; display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.12); }
+  .t-card{ background:var(--plum-deep); padding:34px 30px; display:flex; flex-direction:column; gap:18px; min-height:210px; }
+  .t-mark{ font-family:'Fraunces',serif; font-size:42px; line-height:1; color:var(--gold-bright); }
+  .t-quote{ font-size:15px; color:rgba(255,255,255,0.86); flex:1; }
+  .t-name{ font-weight:700; color:#fff; font-size:14px; }
+  .t-role{ font-size:12px; color:rgba(255,255,255,0.55); margin-top:2px; }
+
+  .about{ padding:100px 0; }
+  .about-grid{ display:grid; grid-template-columns:0.8fr 1.2fr; gap:64px; align-items:center; }
+  .about-photo{ border-radius:2px; overflow:hidden; aspect-ratio:5/5.4; }
+  .about-photo img{ width:100%; height:100%; object-fit:cover; object-position:top center; }
+  .about h2{ font-size:clamp(28px,3.2vw,38px); margin-top:16px; max-width:14ch; }
+  .about .body-copy{ margin-top:20px; display:flex; flex-direction:column; gap:14px; max-width:56ch; font-size:16px; }
+  .about .body-copy b{ color:var(--ink); font-weight:700; }
+  .about .btn{ margin-top:26px; }
+
+  .resources{ padding:100px 0; }
+  .res-grid{ margin-top:50px; display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--mist-line); border:1px solid var(--mist-line); }
+  .res-card{ background:var(--paper); padding:32px 24px; display:flex; flex-direction:column; gap:14px; }
+  .res-icon{ width:34px; height:34px; color:var(--plum); }
+  .res-card h3{ font-size:15.5px; font-family:'Libre Franklin',sans-serif; font-weight:800; }
+  .res-card p{ font-size:13px; }
+  .res-card a{ margin-top:auto; font-size:12.5px; font-weight:700; color:var(--plum); text-decoration:none; display:inline-flex; align-items:center; gap:6px; }
+  .res-card a:hover{ color:var(--plum-bright); }
+
+  .contact{ padding:120px 0; text-align:center; }
+  .contact h2{ font-size:clamp(30px,4vw,48px); max-width:16ch; margin:16px auto 0; }
+  .contact p.sub{ margin:20px auto 0; max-width:46ch; }
+  .contact .hero-actions{ justify-content:center; margin-top:34px; }
+
+  @media (max-width:980px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-photo{ order:-1; max-width:400px; margin:0 auto; }
+    .about-grid{ grid-template-columns:1fr; }
+    .about-photo{ max-width:400px; margin:0 auto; }
+    .method-rail{ grid-template-columns:1fr 1fr; gap:36px; }
+    .method-rail::before{ display:none; }
+    .t-grid{ grid-template-columns:1fr; }
+    .res-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width:600px){
+    .wrap{ padding:0 20px; }
+    .hero{ padding-top:120px; }
+    .method-rail{ grid-template-columns:1fr; }
+    .res-grid{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav" id="siteNav">
+  <div class="wrap nav-inner">
+    <a href="#" class="wordmark">Feliz de Emprender<span>Mentoras de emprendedoras</span></a>
+    <nav class="links" id="navLinks">
+      <a href="#programas">Programas</a>
+      <a href="#nosotras">Nosotras</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#contacto" class="cta-link">Contacto</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Mentoras de emprendedoras · B Process</span>
+      <h1>Animate a vivir de <em>tus sueños.</em></h1>
+      <p class="lede">Cinco caminos, un mismo destino: que tu negocio te dé la vida que querés. Elegí el programa hecho para tu momento.</p>
+      <div class="hero-actions">
+        <a href="#programas" class="btn btn-primary">Ver los programas</a>
+        <a href="https://web.whatsapp.com/send?phone=541157324441" class="btn btn-ghost">Hablar con Lu y Ari</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="frame">
+        <img src="https://felizdeemprender.com/wp-content/uploads/2023/06/B-Process-home.jpg" alt="Luciana y Ariana Belotti, mentoras de Feliz de Emprender">
+      </div>
+      <div class="tag">Meta + Propósito + Mindset + Plan</div>
+    </div>
+  </div>
+  <div class="hero-marquee">
+    <div class="wrap">
+      <span>Escala Estratégica</span>
+      <span>Rediseñarte 10X</span>
+      <span>Mentoría Personalizada</span>
+      <span>+7 años acompañando emprendedoras</span>
+      <span>Buenos Aires, Argentina</span>
+    </div>
+  </div>
+</section>
+
+<section class="segment">
+  <div class="wrap">
+    <div class="segment-head reveal">
+      <span class="eyebrow">Empecemos por vos</span>
+      <h2>¿Cuál es tu momento hoy?</h2>
+    </div>
+    <div class="segment-grid reveal">
+      <a href="programas/escala-estrategica.html" class="segment-card">
+        <p class="situation">Facturás bien, pero sos el límite de tu propio negocio.</p>
+        <span class="arrow-to">Escala Estratégica &rarr;</span>
+      </a>
+      <a href="programas/rediseñarte-10x.html" class="segment-card">
+        <p class="situation">Querés animarte a emprender y no sabés por dónde empezar.</p>
+        <span class="arrow-to">Rediseñarte 10X &rarr;</span>
+      </a>
+      <a href="programas/mentoria-personalizada.html" class="segment-card">
+        <p class="situation">Necesitás un acompañamiento hecho a tu medida.</p>
+        <span class="arrow-to">Mentoría Personalizada &rarr;</span>
+      </a>
+      <a href="programas/kit-herramientas.html" class="segment-card">
+        <p class="situation">Te da miedo usar las herramientas digitales de tu negocio.</p>
+        <span class="arrow-to">Kit de Herramientas &rarr;</span>
+      </a>
+      <a href="programas/red-maestra.html" class="segment-card">
+        <p class="situation">Querés construir una red que potencie tu emprendimiento.</p>
+        <span class="arrow-to">Red Maestra &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="catalog" id="programas">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Nuestros programas</span>
+        <h2>Elegí cómo querés avanzar.</h2>
+      </div>
+      <p class="sub">Formatos grupales, individuales y gratuitos — cada uno con su propia página, su propio contenido y su propio camino de acción.</p>
+    </div>
+    <div class="catalog-grid reveal">
+      <a href="programas/escala-estrategica.html" class="catalog-card">
+        <span class="price-tag">Inversión única · $600.000</span>
+        <span class="for-who">Consultores, agencias y solopreneurs</span>
+        <h3>Escala Estratégica</h3>
+        <p class="desc">8 módulos + bonuses para dejar de ser el cuello de botella de tu propio negocio y escalar sin quemarte.</p>
+        <span class="go">Ver programa &rarr;</span>
+      </a>
+      <a href="programas/rediseñarte-10x.html" class="catalog-card">
+        <span class="price-tag">Programa grupal · consultá</span>
+        <span class="for-who">Segunda mitad de tu vida</span>
+        <h3>Rediseñarte 10X</h3>
+        <p class="desc">Un proceso transformacional para destrabar tu propósito, tu éxito financiero y tu felicidad profunda.</p>
+        <span class="go">Ver programa &rarr;</span>
+      </a>
+      <a href="programas/mentoria-personalizada.html" class="catalog-card">
+        <span class="price-tag">Acompañamiento 1 a 1 · consultá</span>
+        <span class="for-who">Tu situación específica</span>
+        <h3>Mentoría Personalizada</h3>
+        <p class="desc">Transformación individual, a tu ritmo, con acompañamiento humano y continuo en cada etapa.</p>
+        <span class="go">Ver programa &rarr;</span>
+      </a>
+      <a href="programas/kit-herramientas.html" class="catalog-card">
+        <span class="price-tag free">Gratis</span>
+        <span class="for-who">Primeros pasos digitales</span>
+        <h3>Kit de Herramientas Esenciales</h3>
+        <p class="desc">Perdé el miedo a las herramientas clave de tu negocio con módulos cortos y accionables.</p>
+        <span class="go">Acceder gratis &rarr;</span>
+      </a>
+      <a href="programas/red-maestra.html" class="catalog-card">
+        <span class="price-tag free">Gratis</span>
+        <span class="for-who">Networking estratégico</span>
+        <h3>Red Maestra</h3>
+        <p class="desc">Construí tu capital social: de tener contactos a tener una red que te potencia de verdad.</p>
+        <span class="go">Acceder gratis &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="manifesto reveal">
+  <div class="wrap">
+    <span class="eyebrow">Nuestra filosofía</span>
+    <blockquote>Vivir abundantemente de lo que amás — pleno, feliz, completo, integrado y conectado con vos y con tu vida — es posible.</blockquote>
+    <span class="signoff">¡Hola! Somos Lu y Ari.</span>
+  </div>
+</section>
+
+<section class="method band-dark" id="metodo">
+  <div class="wrap">
+    <div class="method-head reveal">
+      <span class="eyebrow">Nuestro método</span>
+      <h2>Cuatro pasos detrás de cada programa.</h2>
+    </div>
+    <div class="method-rail reveal">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Meta</h3>
+        <p>Identificás tu objetivo a 3, 5 o 10 años — el punto de llegada que le da sentido a cada decisión.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Propósito</h3>
+        <p>Descubrís tu verdadera motivación: el porqué que sostiene tu negocio en los momentos difíciles.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Mindset</h3>
+        <p>Incorporás los patrones de pensamiento que garantizan el éxito de tu emprendimiento.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h3>Plan</h3>
+        <p>Diseñamos, paso a paso, el camino de acción concreto hacia los resultados que buscás.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials band-dark">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Lo que dicen de trabajar con nosotras</span>
+      <h2 style="font-size:clamp(28px,3.2vw,40px); margin-top:16px;">Resultados que hablan por sí solos.</h2>
+    </div>
+    <div class="t-grid reveal">
+      <div class="t-card">
+        <span class="t-mark">&ldquo;</span>
+        <p class="t-quote">Sentía que estaba paralizado con algunos aspectos de mi vida laboral. Completé la escritura de una novela que tenía trabada hace un año y medio; ahora está en revisión.</p>
+        <div><div class="t-name">Alejandro Fotini</div><div class="t-role">Fotiá Consultoría Adaptativa</div></div>
+      </div>
+      <div class="t-card">
+        <span class="t-mark">&ldquo;</span>
+        <p class="t-quote">Estaba perdida, sentía que quería arrancar con mi negocio personal y no sabía por dónde. Hoy tengo clara mi marca, mi cliente ideal y en qué enfocar mis acciones.</p>
+        <div><div class="t-name">Mirta Encinas</div><div class="t-role">Bioexistencia Consciente</div></div>
+      </div>
+      <div class="t-card">
+        <span class="t-mark">&ldquo;</span>
+        <p class="t-quote">Me ayudaron a ver las herramientas con las que contaba y yo no sabía. Ari y Lu son muy empáticas y expertas.</p>
+        <div><div class="t-name">Julieta Kuhn</div><div class="t-role">Asistente online</div></div>
+      </div>
+      <div class="t-card">
+        <span class="t-mark">&ldquo;</span>
+        <p class="t-quote">En breve cumplimos 7 años y gran parte de nuestro crecimiento se lo debemos a B Process.</p>
+        <div><div class="t-name">Masami Shiira</div><div class="t-role">Amo mi Matcha</div></div>
+      </div>
+      <div class="t-card">
+        <span class="t-mark">&ldquo;</span>
+        <p class="t-quote">Vieron lo que yo no veía en mí, y me ayudaron a pensar en grande.</p>
+        <div><div class="t-name">Pao Barcini</div><div class="t-role">Emprendedora</div></div>
+      </div>
+      <div class="t-card">
+        <span class="t-mark">&ldquo;</span>
+        <p class="t-quote">Totalmente recomendables.</p>
+        <div><div class="t-name">Tere Zárate</div><div class="t-role">Libre Verte</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="nosotras">
+  <div class="wrap about-grid">
+    <div class="about-photo reveal">
+      <img src="https://felizdeemprender.com/wp-content/uploads/2023/06/mentoria-home-2.jpg" alt="Sesión de mentoría de Feliz de Emprender">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Quiénes somos</span>
+      <h2>Somos Luciana y Ariana Belotti.</h2>
+      <div class="body-copy">
+        <p>Sabemos que independizarte o hacer crecer tu negocio puede resultar <b>solitario</b> y muy <b>abrumador</b> — porque lo vivimos en primera persona, en nuestros propios negocios.</p>
+        <p>Cada uno de nuestros programas nace de algo que ya resolvimos y probamos con cientos de emprendedores, consultores y agencias. No enseñamos teoría: compartimos el camino real.</p>
+      </div>
+      <a href="#programas" class="btn btn-primary">Ver los programas</a>
+    </div>
+  </div>
+</section>
+
+<section class="resources" id="recursos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Más recursos gratuitos</span>
+        <h2>Contenido para ir avanzando ya.</h2>
+      </div>
+      <p class="sub">Además de Kit de Herramientas y Red Maestra, este contenido te ayuda a dar el primer paso.</p>
+    </div>
+    <div class="res-grid reveal">
+      <div class="res-card">
+        <svg class="res-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 5a2 2 0 012-2h5v18H6a2 2 0 01-2-2V5z"/><path d="M20 5a2 2 0 00-2-2h-5v18h5a2 2 0 002-2V5z"/></svg>
+        <h3>E-book gratuito</h3>
+        <p>Guía descargable con los primeros pasos del método Meta + Propósito + Mindset + Plan.</p>
+        <a href="#contacto">Descargar &rarr;</a>
+      </div>
+      <div class="res-card">
+        <svg class="res-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+        <h3>Masterclass: Crisis de los 40</h3>
+        <p>Cómo atravesar la crisis de sentido de la mitad de la vida y convertirla en tu mejor punto de partida.</p>
+        <a href="#contacto">Ver masterclass &rarr;</a>
+      </div>
+      <div class="res-card">
+        <svg class="res-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7-4.35-9.5-8.5C.8 8.6 2.6 5 6 5c2 0 3.3 1.1 4 2.2C10.7 6.1 12 5 14 5c3.4 0 5.2 3.6 3.5 7.5C15 16.65 12 21 12 21z"/></svg>
+        <h3>7 pasos para emprender</h3>
+        <p>La masterclass completa para emprender, ser feliz y ganar dinero — sin sacrificar tu bienestar.</p>
+        <a href="#contacto">Ver masterclass &rarr;</a>
+      </div>
+      <div class="res-card">
+        <svg class="res-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+        <h3>Blog</h3>
+        <p>Reflexiones, herramientas y casos reales sobre emprender con propósito y vivir en abundancia.</p>
+        <a href="#contacto">Leer notas &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact band-dark" id="contacto">
+  <div class="wrap reveal">
+    <span class="eyebrow">Demos el primer paso</span>
+    <h2 style="color:#fff;">¿Lista para diseñar tu vida abundante?</h2>
+    <p class="sub">Escribinos por WhatsApp y te ayudamos a elegir el programa correcto para tu momento.</p>
+    <div class="hero-actions">
+      <a href="https://web.whatsapp.com/send?phone=541157324441" class="btn btn-primary">Escribir por WhatsApp</a>
+      <a href="mailto:hola@felizdeemprender.com" class="btn btn-ghost">Escribir un email</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="wordmark">Feliz de Emprender<span>Mentoras de emprendedoras</span></a>
+      <p>Cinco programas, un mismo destino: que tu negocio te dé la vida que querés.</p>
+      <div class="social-row">
+        <a href="https://instagram.com/felizdeemprender" aria-label="Instagram">IG</a>
+        <a href="https://linkedin.com/company/felizdeemprender" aria-label="LinkedIn">in</a>
+        <a href="https://tiktok.com/@felizdeemprender" aria-label="TikTok">TT</a>
+        <a href="https://youtube.com/channel/UCKmkd4DeEsYsj3PCHIky1yw" aria-label="YouTube">YT</a>
+      </div>
+    </div>
+    <div>
+      <h4>Programas</h4>
+      <ul>
+        <li><a href="programas/escala-estrategica.html">Escala Estratégica</a></li>
+        <li><a href="programas/rediseñarte-10x.html">Rediseñarte 10X</a></li>
+        <li><a href="programas/mentoria-personalizada.html">Mentoría Personalizada</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Gratuitos</h4>
+      <ul>
+        <li><a href="programas/kit-herramientas.html">Kit de Herramientas</a></li>
+        <li><a href="programas/red-maestra.html">Red Maestra</a></li>
+        <li><a href="#recursos">Blog y masterclasses</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="https://web.whatsapp.com/send?phone=541157324441">WhatsApp</a></li>
+        <li><a href="mailto:hola@felizdeemprender.com">Email</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© B Process | Mentoras de emprendedoras. Todos los derechos reservados.</span>
+    <span>Buenos Aires, Argentina</span>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
