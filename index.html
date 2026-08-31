@@ -28,6 +28,48 @@
   .hero-marquee .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; }
   .hero-marquee span{ font-size:12px; font-weight:700; letter-spacing:0.13em; text-transform:uppercase; color:var(--ink-soft); }
 
+  .quiz-section{ padding:0 0 100px; }
+  .quiz-card{
+    background:var(--plum-deep); color:#fff; border:1px solid rgba(221,182,91,0.25);
+    padding:56px 60px; max-width:760px; margin:0 auto; min-height:340px;
+    display:flex; flex-direction:column; justify-content:center; position:relative;
+  }
+  .quiz-card .eyebrow{ color:var(--gold-bright); }
+  .quiz-card .eyebrow::before{ background:var(--gold-bright); }
+  .quiz-screen h2{ color:#fff; font-size:clamp(26px,3vw,36px); margin-top:16px; }
+  .quiz-lede{ margin-top:16px; font-size:16px; color:rgba(255,255,255,0.72); max-width:52ch; }
+  .quiz-actions{ display:flex; gap:16px; margin-top:30px; flex-wrap:wrap; }
+  .quiz-card .btn-ghost{ border-color:rgba(255,255,255,0.5); color:#fff; }
+  .quiz-card .btn-ghost:hover{ border-color:var(--gold-bright); color:var(--gold-bright); }
+
+  .quiz-progress{ display:flex; align-items:center; gap:16px; margin-bottom:30px; }
+  .quiz-progress-track{ flex:1; height:4px; background:rgba(255,255,255,0.15); }
+  .quiz-progress-fill{ height:100%; background:var(--gold-bright); width:0%; transition:width 0.35s ease; }
+  .quiz-progress-label{ font-size:12.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.55); white-space:nowrap; }
+
+  .quiz-question{ color:#fff; font-size:clamp(22px,2.6vw,30px); line-height:1.3; max-width:52ch; }
+  .quiz-options{ margin-top:30px; display:flex; flex-direction:column; gap:1px; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.12); }
+  .quiz-option{
+    background:var(--plum-deep); border:none; text-align:left; padding:20px 24px;
+    font-family:'Libre Franklin',sans-serif; font-size:15.5px; color:#fff; cursor:pointer;
+    display:flex; align-items:center; gap:16px; transition:background 0.2s ease;
+  }
+  .quiz-option:hover{ background:var(--plum-deep-2); }
+  .quiz-option .dot{ width:9px; height:9px; border-radius:50%; border:1.5px solid var(--gold-bright); flex-shrink:0; }
+
+  .quiz-restart{
+    margin-top:22px; align-self:flex-start; background:none; border:none; cursor:pointer;
+    font-family:'Libre Franklin',sans-serif; font-size:13px; font-weight:700; color:rgba(255,255,255,0.5);
+    text-decoration:underline; text-underline-offset:3px;
+  }
+  .quiz-restart:hover{ color:var(--gold-bright); }
+
+  @media (max-width:600px){
+    .quiz-card{ padding:38px 26px; }
+    .quiz-actions{ flex-direction:column; }
+    .quiz-actions .btn{ width:100%; justify-content:center; }
+  }
+
   .segment{ padding:100px 0 110px; }
   .segment-head{ max-width:640px; margin-bottom:50px; }
   .segment-head h2{ font-size:clamp(28px,3.2vw,40px); margin-top:16px; }
@@ -143,10 +185,48 @@
   </div>
 </section>
 
-<section class="segment">
+<section class="quiz-section reveal" id="test">
+  <div class="wrap">
+    <div class="quiz-card" id="quizCard">
+
+      <div class="quiz-screen" data-screen="intro">
+        <span class="eyebrow">¿No sabés cuál elegir?</span>
+        <h2>Hacé este test de un minuto.</h2>
+        <p class="quiz-lede">6 preguntas rápidas — sin vueltas — para saber qué programa se ajusta mejor a tu momento.</p>
+        <div class="quiz-actions">
+          <button type="button" class="btn btn-primary" id="quizStart">Empezar el test</button>
+          <a href="#elegir-directo" class="btn btn-ghost">Prefiero elegir yo misma/o</a>
+        </div>
+      </div>
+
+      <div class="quiz-screen" data-screen="question" hidden>
+        <div class="quiz-progress">
+          <div class="quiz-progress-track"><div class="quiz-progress-fill" id="quizProgressFill"></div></div>
+          <span class="quiz-progress-label" id="quizProgressLabel">Pregunta 1 de 6</span>
+        </div>
+        <h3 class="quiz-question" id="quizQuestionText"></h3>
+        <div class="quiz-options" id="quizOptions"></div>
+      </div>
+
+      <div class="quiz-screen" data-screen="result" hidden>
+        <span class="eyebrow">Según tus respuestas</span>
+        <h2 id="quizResultName"></h2>
+        <p class="quiz-lede" id="quizResultBlurb"></p>
+        <div class="quiz-actions">
+          <a href="#" class="btn btn-primary" id="quizResultCta">Ver programa</a>
+          <a href="#programas" class="btn btn-ghost">Ver los 5 programas</a>
+        </div>
+        <button type="button" class="quiz-restart" id="quizRestart">Volver a hacer el test</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="segment" id="elegir-directo">
   <div class="wrap">
     <div class="segment-head reveal">
-      <span class="eyebrow">Empecemos por vos</span>
+      <span class="eyebrow">¿Preferís elegir vos?</span>
       <h2>¿Cuál es tu momento hoy?</h2>
     </div>
     <div class="segment-grid reveal">
@@ -413,5 +493,6 @@
 </footer>
 
 <script src="assets/js/site.js"></script>
+<script src="assets/js/quiz.js"></script>
 </body>
 </html>
