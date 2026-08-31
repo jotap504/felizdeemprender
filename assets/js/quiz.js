@@ -37,60 +37,68 @@
 
   var QUESTIONS = [
     {
-      text: '¿Cómo está tu negocio hoy?',
+      time: '08:00 · La mañana empieza',
+      narration:
+        'Todavía no terminaste el café cuando suena el teléfono. Un cliente nuevo, entusiasmado, quiere arrancar ya.',
+      text: '¿Qué hacés?',
       options: [
-        { label: 'Todavía no arrancó, o recién estoy dando los primeros pasos', scores: { kit: 1, rediseñarte: 1 } },
-        { label: 'Ya genera ingresos, pero siento que sin mí se detiene todo', scores: { escala: 2 } },
-        { label: 'Tengo una idea clara, pero me faltan ciertos contactos clave', scores: { redmaestra: 2 } },
-        { label: 'Está armado, pero siento que ya no me llena como antes', scores: { rediseñarte: 2 } },
+        { label: 'Lo atendés vos misma/o, como siempre — nadie más entiende el negocio como vos', scores: { escala: 2 } },
+        { label: 'Le decís que sí, aunque por dentro no tenés ni idea de cómo armar bien la propuesta', scores: { kit: 2 } },
+        { label: 'Antes de responder, pensás en alguien de tu red que le podría servir más que vos', scores: { redmaestra: 2 } },
+        { label: 'Contestás por costumbre, pero hace rato esto no te llena como antes', scores: { rediseñarte: 2 } },
+        { label: 'Lo primero que pensás es en esa decisión puntual que tenés pendiente hace semanas', scores: { mentoria: 2 } },
       ],
     },
     {
-      text: 'Cuando pensás en tu semana laboral típica, ¿qué es lo primero que se te cruza?',
+      time: '11:00 · El cuello de botella',
+      narration:
+        'Hay tres cosas esperando tu aprobación. Nada avanza si vos no decís que sí primero.',
+      text: '¿Cómo lo resolvés?',
       options: [
-        { label: 'Que no doy abasto con todo lo que tengo que hacer yo misma/o', scores: { escala: 2 } },
-        { label: 'Que me cuesta usar ciertas herramientas (redes, diseño, plataformas)', scores: { kit: 2 } },
-        { label: 'Que me falta gente estratégica alrededor para crecer más rápido', scores: { redmaestra: 2 } },
-        { label: 'Que hago las cosas casi en piloto automático, sin mucho sentido', scores: { rediseñarte: 1 } },
+        { label: 'Las revisás una por una, aunque sepas que mañana va a pasar exactamente lo mismo', scores: { escala: 2 } },
+        { label: 'Te das cuenta de que ni siquiera sabés cómo automatizar lo más simple de todo esto', scores: { kit: 2 } },
+        { label: 'Pensás en la persona que te podría ayudar a delegar esto — pero no la tenés todavía', scores: { redmaestra: 2 } },
+        { label: 'Sentís que el problema real no es este, sino algo bastante más de fondo', scores: { rediseñarte: 2 } },
+        { label: 'Hay un tema específico ahí adentro que te viene frenando hace tiempo', scores: { mentoria: 1 } },
       ],
     },
     {
-      text: 'Si mañana tuvieras una hora libre para invertir en tu negocio, ¿en qué la usarías?',
+      time: '14:30 · La vidriera ajena',
+      narration:
+        'Scrolleás un rato entre cliente y cliente. Ves a otra persona compartiendo cómo le está yendo.',
+      text: '¿Qué te genera?',
       options: [
-        { label: 'En ordenar procesos para depender menos de mi tiempo', scores: { escala: 2 } },
-        { label: 'En animarme con una herramienta digital que vengo evitando', scores: { kit: 2 } },
-        { label: 'En conectar con alguien que me pueda abrir una puerta', scores: { redmaestra: 2 } },
-        { label: 'En pensar qué es lo que realmente quiero de mi vida y mi negocio', scores: { rediseñarte: 2 } },
-        { label: 'En resolver algo puntual que tengo trabado hace tiempo', scores: { mentoria: 2 } },
+        { label: '"Yo podría crecer así, si soltara un poco el control"', scores: { escala: 2 } },
+        { label: '"Ojalá supiera usar esa herramienta tan bien como ella"', scores: { kit: 2 } },
+        { label: '"Esa persona conoce a todo el mundo — ahí está la diferencia"', scores: { redmaestra: 2 } },
+        { label: '"Se nota que hizo un proceso de transformación grupal — me gustaría vivir algo así"', scores: { rediseñarte: 2 } },
+        { label: 'Cerrás la app: hoy tenés la cabeza en otra cosa mucho más puntual', scores: { mentoria: 2 } },
       ],
     },
     {
-      text: '¿Cómo preferís avanzar cuando encarás algo nuevo?',
+      time: '18:00 · El freno real',
+      narration:
+        'Se termina la jornada. Antes de cerrar la compu, hay algo que te sigue dando vueltas.',
+      text: '¿Qué es?',
       options: [
-        { label: 'Con un sistema claro, paso a paso, para aplicar ya', scores: { escala: 1 } },
-        { label: 'En grupo, con otras personas que están en lo mismo', scores: { rediseñarte: 1 } },
-        { label: 'Sola/o, a mi propio ritmo, con contenido corto', scores: { kit: 1 } },
-        { label: 'Con alguien 1 a 1 que me acompañe en mi caso puntual', scores: { mentoria: 2 } },
+        { label: 'Que facturás bien, pero seguís siendo vos el límite de todo', scores: { escala: 3 } },
+        { label: 'Que te falta gente estratégica alrededor para ir más rápido', scores: { redmaestra: 3 } },
+        { label: 'Que te da un poco de vergüenza no saber usar ciertas herramientas clave', scores: { kit: 3 } },
+        { label: 'Que estás en una etapa de replantearte todo, no solo el negocio', scores: { rediseñarte: 3 } },
+        { label: 'Que hay una sola cosa puntual que, si se resolviera, cambiaría todo lo demás', scores: { mentoria: 3 } },
       ],
     },
     {
-      text: '¿Cuál de estas frases te representa más hoy?',
+      time: '23:00 · El pensamiento antes de dormir',
+      narration:
+        'Ya en la cama, repasás el día. Una sola frase se queda dando vueltas más que las demás.',
+      text: '¿Cuál?',
       options: [
-        { label: 'Facturo bien, pero siento que soy el límite de mi propio crecimiento', scores: { escala: 2 } },
-        { label: 'Podría lograr mucho más si tuviera mejores contactos', scores: { redmaestra: 2 } },
-        { label: 'Me da un poco de vergüenza no saber usar ciertas herramientas clave', scores: { kit: 2 } },
-        { label: 'Siento que estoy en una etapa de replantearme todo', scores: { rediseñarte: 2 } },
-        { label: 'Tengo un tema puntual que me tiene estancada/o', scores: { mentoria: 2 } },
-      ],
-    },
-    {
-      text: 'Si pudieras resolver una sola cosa en los próximos 3 meses, ¿cuál sería?',
-      options: [
-        { label: 'Vender más sin trabajar más horas', scores: { escala: 3 } },
-        { label: 'Tener una red de gente que me abra puertas', scores: { redmaestra: 3 } },
-        { label: 'Perder el miedo a las herramientas y sentirme al día', scores: { kit: 3 } },
-        { label: 'Sentirme plena/o, no solo ganar plata', scores: { rediseñarte: 3 } },
-        { label: 'Resolver esa situación puntual que me tiene trabada/o', scores: { mentoria: 3 } },
+        { label: '"Necesito que esto funcione sin que dependa de mí en cada paso"', scores: { escala: 3 } },
+        { label: '"Necesito rodearme de la gente correcta"', scores: { redmaestra: 3 } },
+        { label: '"Necesito perder el miedo y animarme de una vez"', scores: { kit: 3 } },
+        { label: '"Necesito sentirme plena/o, no solo facturar"', scores: { rediseñarte: 3 } },
+        { label: '"Necesito resolver esa situación puntual antes de pensar en cualquier otra cosa"', scores: { mentoria: 3 } },
       ],
     },
   ];
@@ -115,7 +123,9 @@
     document.getElementById('quizProgressFill').style.width =
       (current / QUESTIONS.length) * 100 + '%';
     document.getElementById('quizProgressLabel').textContent =
-      'Pregunta ' + (current + 1) + ' de ' + QUESTIONS.length;
+      'Escena ' + (current + 1) + ' de ' + QUESTIONS.length;
+    document.getElementById('quizSceneTime').textContent = q.time;
+    document.getElementById('quizNarration').textContent = q.narration;
     document.getElementById('quizQuestionText').textContent = q.text;
 
     var optionsEl = document.getElementById('quizOptions');
