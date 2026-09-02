@@ -77,8 +77,8 @@ header.site-nav.scrolled{
   padding:13px 0; box-shadow:0 1px 0 var(--mist-line);
 }
 .nav-inner{ display:flex; align-items:center; justify-content:space-between; }
-.wordmark{ font-family:'Fraunces', serif; font-style:italic; font-weight:600; font-size:24px; color:var(--ink); text-decoration:none; line-height:1; }
-.wordmark span{ display:block; font-family:'Libre Franklin',sans-serif; font-style:normal; font-weight:700; font-size:9.5px; letter-spacing:0.22em; text-transform:uppercase; color:var(--plum); margin-top:3px; }
+.wordmark{ font-family:'Libre Franklin',sans-serif; font-style:normal; font-weight:800; font-size:17px; letter-spacing:-0.01em; color:var(--ink); text-decoration:none; line-height:1; }
+.wordmark span{ display:block; font-family:'Libre Franklin',sans-serif; font-style:normal; font-weight:600; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--plum); margin-top:4px; }
 nav.links{ display:flex; align-items:center; gap:30px; }
 nav.links a{ font-size:14px; font-weight:600; text-decoration:none; color:var(--ink); position:relative; padding:4px 0; }
 nav.links a::after{ content:""; position:absolute; left:0; bottom:0; width:0; height:2px; background:var(--plum); transition:width 0.25s ease; }
