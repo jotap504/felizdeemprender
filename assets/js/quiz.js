@@ -35,70 +35,98 @@
     },
   };
 
+  var STATES = {
+    escala: {
+      name: 'Sobrecarga del sostén',
+      reading:
+        'Tu negocio funciona — y funciona bien — pero funciona a través tuyo, no más allá tuyo. Cada aprobación, cada "mejor lo reviso yo", te confirma que sos indispensable, y eso, aunque se sienta como responsabilidad, también es puro agotamiento. No te falta esfuerzo: te falta un sistema que sostenga lo que ya construiste.',
+    },
+    rediseñarte: {
+      name: 'Búsqueda de sentido',
+      reading:
+        'No es que algo esté saliendo mal — es que algo dejó de sentirse verdadero. Preguntarte si esto es lo que realmente querés no es una señal de fracaso: es una señal de que vos creciste y tu negocio todavía no. Merecés un espacio para repensar el rumbo, no solo para seguir empujando en la misma dirección.',
+    },
+    mentoria: {
+      name: 'Nudo puntual',
+      reading:
+        'No es tu negocio entero lo que está trabado — es un punto específico que se volvió el centro de gravedad de todo lo demás. Mientras esa situación siga sin resolverse, cada otra decisión pesa el doble. No necesitás un programa entero: necesitás que alguien mire exactamente ese nudo con vos.',
+    },
+    kit: {
+      name: 'Parálisis inicial',
+      reading:
+        'No es falta de capacidad — es que el miedo a hacerlo mal te está costando más energía de la que realmente costaría aprenderlo. Postergar se siente más seguro que intentar, pero el costo silencioso crece cada día. No necesitás un curso larguísimo: necesitás animarte a dar un primer paso chico y concreto.',
+    },
+    redmaestra: {
+      name: 'Aislamiento estratégico',
+      reading:
+        'Tenés capacidad y tenés ganas, y aun así sentís que estás empujando sola/o algo que debería tener más manos. No es un problema de esfuerzo: es que te falta la red que multiplique lo que vos ya sabés hacer. Rodearte de las personas correctas no es un lujo — es la pieza que falta.',
+    },
+  };
+
   var QUESTIONS = [
     {
-      time: '08:00 · La mañana empieza',
+      time: '08:00 · Antes de arrancar',
       narration:
-        'Todavía no terminaste el café cuando suena el teléfono. Un cliente nuevo, entusiasmado, quiere arrancar ya.',
-      text: '¿Qué hacés?',
+        'Todavía no abriste la computadora. Antes de que el día te absorba, te hacés una pregunta rápida.',
+      text: '¿Cómo describirías tu energía con tu negocio en este momento?',
       options: [
-        { label: 'Lo atendés vos misma/o, como siempre — nadie más entiende el negocio como vos', scores: { escala: 2 } },
-        { label: 'Le decís que sí, aunque por dentro no tenés ni idea de cómo armar bien la propuesta', scores: { kit: 2 } },
-        { label: 'Antes de responder, pensás en alguien de tu red que le podría servir más que vos', scores: { redmaestra: 2 } },
-        { label: 'Contestás por costumbre, pero hace rato esto no te llena como antes', scores: { rediseñarte: 2 } },
-        { label: 'Lo primero que pensás es en esa decisión puntual que tenés pendiente hace semanas', scores: { mentoria: 2 } },
+        { label: 'Agotada/o — hago todo yo y siento que no doy más', scores: { escala: 2 } },
+        { label: 'Perdida/o — no sé si esto es lo que quiero seguir haciendo', scores: { rediseñarte: 2 } },
+        { label: 'Estancada/o — hay algo puntual que no logro resolver hace tiempo', scores: { mentoria: 2 } },
+        { label: 'Insegura/o — evito ciertas cosas porque no sé cómo hacerlas', scores: { kit: 2 } },
+        { label: 'Sola/o — tengo ganas, pero me falta con quién', scores: { redmaestra: 2 } },
       ],
     },
     {
-      time: '11:00 · El cuello de botella',
+      time: '11:00 · En medio del ruido',
       narration:
-        'Hay tres cosas esperando tu aprobación. Nada avanza si vos no decís que sí primero.',
-      text: '¿Cómo lo resolvés?',
+        'Entre tarea y tarea, una frase se cuela en tu cabeza — la misma de siempre.',
+      text: '¿Cuál de estas frases te repetís más seguido?',
       options: [
-        { label: 'Las revisás una por una, aunque sepas que mañana va a pasar exactamente lo mismo', scores: { escala: 2 } },
-        { label: 'Te das cuenta de que ni siquiera sabés cómo automatizar lo más simple de todo esto', scores: { kit: 2 } },
-        { label: 'Pensás en la persona que te podría ayudar a delegar esto — pero no la tenés todavía', scores: { redmaestra: 2 } },
-        { label: 'Sentís que el problema real no es este, sino algo bastante más de fondo', scores: { rediseñarte: 2 } },
-        { label: 'Hay un tema específico ahí adentro que te viene frenando hace tiempo', scores: { mentoria: 1 } },
+        { label: '"Si no lo hago yo, no queda bien"', scores: { escala: 2 } },
+        { label: '"¿Y si esto no es para lo que nací?"', scores: { rediseñarte: 2 } },
+        { label: '"Tengo que resolver ESO antes de seguir con cualquier otra cosa"', scores: { mentoria: 2 } },
+        { label: '"Después lo aprendo, ahora no tengo cabeza"', scores: { kit: 2 } },
+        { label: '"Nadie más entiende lo que estoy tratando de construir"', scores: { redmaestra: 2 } },
       ],
     },
     {
-      time: '14:30 · La vidriera ajena',
+      time: '14:30 · La lista pendiente',
       narration:
-        'Scrolleás un rato entre cliente y cliente. Ves a otra persona compartiendo cómo le está yendo.',
-      text: '¿Qué te genera?',
+        'Mirás tu lista de tareas. Hay algo ahí que lleva más tiempo del que te gustaría admitir.',
+      text: '¿Qué es lo que más postergás?',
       options: [
-        { label: '"Yo podría crecer así, si soltara un poco el control"', scores: { escala: 2 } },
-        { label: '"Ojalá supiera usar esa herramienta tan bien como ella"', scores: { kit: 2 } },
-        { label: '"Esa persona conoce a todo el mundo — ahí está la diferencia"', scores: { redmaestra: 2 } },
-        { label: '"Se nota que hizo un proceso de transformación grupal — me gustaría vivir algo así"', scores: { rediseñarte: 2 } },
-        { label: 'Cerrás la app: hoy tenés la cabeza en otra cosa mucho más puntual', scores: { mentoria: 2 } },
+        { label: 'Delegar tareas — sé que debería, pero no lo hago', scores: { escala: 2 } },
+        { label: 'Pensar qué quiero realmente — lo evito porque da miedo la respuesta', scores: { rediseñarte: 2 } },
+        { label: 'Esa conversación o decisión puntual que vengo pateando', scores: { mentoria: 2 } },
+        { label: 'Aprender esa herramienta que "todo el mundo ya sabe usar"', scores: { kit: 2 } },
+        { label: 'Mostrarme en espacios donde podría conectar con otras personas', scores: { redmaestra: 2 } },
       ],
     },
     {
-      time: '18:00 · El freno real',
+      time: '18:00 · Cuando algo se rompe',
       narration:
-        'Se termina la jornada. Antes de cerrar la compu, hay algo que te sigue dando vueltas.',
-      text: '¿Qué es?',
+        'Justo cuando pensabas cerrar la computadora, algo sale mal.',
+      text: '¿Qué es lo primero que hacés?',
       options: [
-        { label: 'Que facturás bien, pero seguís siendo vos el límite de todo', scores: { escala: 3 } },
-        { label: 'Que te falta gente estratégica alrededor para ir más rápido', scores: { redmaestra: 3 } },
-        { label: 'Que te da un poco de vergüenza no saber usar ciertas herramientas clave', scores: { kit: 3 } },
-        { label: 'Que estás en una etapa de replantearte todo, no solo el negocio', scores: { rediseñarte: 3 } },
-        { label: 'Que hay una sola cosa puntual que, si se resolviera, cambiaría todo lo demás', scores: { mentoria: 3 } },
+        { label: 'Lo soluciono yo misma/o, rápido, para que no se note', scores: { escala: 3 } },
+        { label: 'Me pregunto si vale la pena seguir insistiendo con esto', scores: { rediseñarte: 3 } },
+        { label: 'Pienso en ESE tema puntual que siempre vuelve a aparecer', scores: { mentoria: 3 } },
+        { label: 'Me paralizo — no sé ni por dónde empezar a arreglarlo', scores: { kit: 3 } },
+        { label: 'Busco a alguien con quien hablarlo, pero no encuentro a quién', scores: { redmaestra: 3 } },
       ],
     },
     {
-      time: '23:00 · El pensamiento antes de dormir',
+      time: '23:00 · Antes de dormir',
       narration:
-        'Ya en la cama, repasás el día. Una sola frase se queda dando vueltas más que las demás.',
-      text: '¿Cuál?',
+        'Ya en la cama, repasás el día. Si pudieras pedir una sola cosa para mañana...',
+      text: '¿Cuál sería?',
       options: [
-        { label: '"Necesito que esto funcione sin que dependa de mí en cada paso"', scores: { escala: 3 } },
-        { label: '"Necesito rodearme de la gente correcta"', scores: { redmaestra: 3 } },
-        { label: '"Necesito perder el miedo y animarme de una vez"', scores: { kit: 3 } },
-        { label: '"Necesito sentirme plena/o, no solo facturar"', scores: { rediseñarte: 3 } },
-        { label: '"Necesito resolver esa situación puntual antes de pensar en cualquier otra cosa"', scores: { mentoria: 3 } },
+        { label: 'Que mi negocio funcione sin que dependa de mí en cada paso', scores: { escala: 3 } },
+        { label: 'Sentir que lo que hago tiene sentido de nuevo', scores: { rediseñarte: 3 } },
+        { label: 'Resolver ya esa situación puntual que me tiene trabada/o', scores: { mentoria: 3 } },
+        { label: 'Perder el miedo y animarme con las herramientas que evito', scores: { kit: 3 } },
+        { label: 'Rodearme de la gente correcta para no sentirme tan sola/o', scores: { redmaestra: 3 } },
       ],
     },
   ];
@@ -154,6 +182,9 @@
     var topKey = Object.keys(scores).reduce(function (a, b) {
       return scores[b] > scores[a] ? b : a;
     });
+    var state = STATES[topKey];
+    document.getElementById('quizStateName').textContent = state.name;
+    document.getElementById('quizStateReading').textContent = state.reading;
     var program = PROGRAMS[topKey];
     document.getElementById('quizResultName').textContent = program.name;
     document.getElementById('quizResultBlurb').textContent = program.blurb;
