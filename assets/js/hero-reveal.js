@@ -19,7 +19,7 @@
 
   gsap.registerPlugin(ScrollTrigger);
 
-  var scrollDistance = window.innerWidth < 720 ? '+=100%' : '+=150%';
+  var scrollDistance = window.innerWidth < 980 ? '+=100%' : '+=150%';
 
   var tl = gsap.timeline({
     scrollTrigger: {
