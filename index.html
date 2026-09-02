@@ -10,6 +10,44 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Libre+Franklin:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
 <style>
+  .reveal-hero{
+    position:relative; height:100vh; min-height:560px; width:100%;
+    overflow:hidden; background:var(--paper);
+  }
+  .reveal-hero-type{
+    position:absolute; inset:0; z-index:3; pointer-events:none;
+    display:flex; flex-direction:column; justify-content:space-between;
+    will-change:transform, opacity, filter;
+  }
+  .reveal-word{
+    position:absolute; left:0; right:0; text-align:center;
+    font-weight:600; letter-spacing:-0.02em; line-height:1;
+  }
+  .reveal-word-top{
+    top:8%; color:var(--plum); font-family:'Libre Franklin',sans-serif; font-weight:800;
+    font-size:clamp(2.6rem, 9vw, 7rem); text-transform:lowercase;
+  }
+  .reveal-word-right{
+    top:42%; right:4%; left:auto; width:auto; color:var(--ink);
+    font-family:'Libre Franklin',sans-serif; font-weight:800;
+    font-size:clamp(2.6rem, 9vw, 7rem);
+  }
+  .reveal-word-bottom{
+    bottom:6%; color:var(--plum); font-family:'Fraunces',serif; font-style:italic; font-weight:500;
+    font-size:clamp(2.8rem, 10vw, 8rem);
+  }
+  .reveal-hero-pill{
+    position:absolute; z-index:2; overflow:hidden; box-shadow:0 30px 70px -30px rgba(43,10,40,0.35);
+    top:20%; bottom:20%; left:26%; right:26%; border-radius:12px;
+    will-change:top, left, right, bottom, border-radius;
+  }
+  .reveal-hero-pill img{ width:100%; height:100%; object-fit:cover; object-position:top center; }
+  @media (max-width:720px){
+    .reveal-word-top, .reveal-word-bottom{ font-size:clamp(2.1rem, 11vw, 3.6rem); }
+    .reveal-word-right{ font-size:clamp(2.1rem, 11vw, 3.6rem); right:0; left:0; text-align:center; }
+    .reveal-hero-pill{ left:8%; right:8%; top:30%; bottom:30%; }
+  }
+
   .hero{ position:relative; padding:150px 0 0; overflow:hidden; }
   .hero-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; align-items:center; gap:40px; }
   .hero-copy h1{ font-size:clamp(40px, 5.4vw, 64px); line-height:1.05; margin-top:20px; }
@@ -163,6 +201,17 @@
     </button>
   </div>
 </header>
+
+<section class="reveal-hero" id="revealHero">
+  <div class="reveal-hero-type" id="revealHeroType">
+    <span class="reveal-word reveal-word-top">Animate</span>
+    <span class="reveal-word reveal-word-right">a vivir</span>
+    <span class="reveal-word reveal-word-bottom">de tus sueños</span>
+  </div>
+  <div class="reveal-hero-pill" id="revealHeroPill">
+    <img src="https://felizdeemprender.com/wp-content/uploads/2023/06/B-Process-home.jpg" alt="Luciana y Ariana Belotti, mentoras de Feliz de Emprender">
+  </div>
+</section>
 
 <section class="hero">
   <div class="wrap hero-grid">
@@ -505,5 +554,8 @@
 
 <script src="assets/js/site.js"></script>
 <script src="assets/js/quiz.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/js/hero-reveal.js"></script>
 </body>
 </html>
