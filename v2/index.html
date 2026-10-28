@@ -9,49 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Libre+Franklin:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/site.css">
-<link rel="stylesheet" href="../assets/css/home.css">
-<style>
-  .reveal-hero{
-    position:relative; height:100vh; min-height:560px; width:100%;
-    overflow:hidden; background:var(--paper);
-  }
-  .reveal-hero-type{
-    position:absolute; inset:0; z-index:3; pointer-events:none;
-    display:flex; flex-direction:column; justify-content:space-between;
-    will-change:transform, opacity, filter;
-  }
-  .reveal-word{
-    position:absolute; left:0; right:0; text-align:center;
-    font-weight:600; letter-spacing:-0.02em; line-height:1;
-  }
-  .reveal-word-top{
-    top:8%; color:var(--plum); font-family:'Libre Franklin',sans-serif; font-weight:800;
-    font-size:clamp(2.6rem, 9vw, 7rem); text-transform:lowercase;
-  }
-  .reveal-word-right{
-    top:42%; right:4%; left:auto; width:auto; color:var(--ink);
-    font-family:'Libre Franklin',sans-serif; font-weight:800;
-    font-size:clamp(2.6rem, 9vw, 7rem);
-  }
-  .reveal-word-bottom{
-    bottom:6%; color:var(--plum); font-family:'Fraunces',serif; font-style:italic; font-weight:500;
-    font-size:clamp(2.8rem, 10vw, 8rem);
-  }
-  .reveal-hero-pill{
-    position:absolute; z-index:2; overflow:hidden; box-shadow:0 30px 70px -30px rgba(43,10,40,0.35);
-    top:20%; bottom:20%; left:14%; right:14%; border-radius:12px;
-    will-change:top, left, right, bottom, border-radius;
-  }
-  .reveal-hero-pill img{ width:100%; height:100%; object-fit:cover; object-position:top center; }
-  @media (max-width:980px){
-    .reveal-word-top, .reveal-word-bottom{ font-size:clamp(2.1rem, 11vw, 3.6rem); }
-    .reveal-word-top{ top:21%; }
-    .reveal-word-right{ font-size:clamp(2.1rem, 11vw, 3.6rem); top:62%; bottom:auto; right:0; left:0; text-align:center; }
-    .reveal-word-bottom{ top:73%; bottom:auto; }
-    .reveal-hero-pill{ left:6%; right:6%; top:26%; bottom:42%; }
-  }
-
-</style>
+<link rel="stylesheet" href="../assets/css/home.css?v=3">
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -82,34 +40,16 @@
 </div>
 </header>
 <main id="inicio">
-<section class="reveal-hero" id="revealHero">
-  <div class="reveal-hero-type" id="revealHeroType">
-    <span class="reveal-word reveal-word-top">Animate</span>
-    <span class="reveal-word reveal-word-right">a vivir</span>
-    <span class="reveal-word reveal-word-bottom">de tus sueños</span>
-  </div>
-  <div class="reveal-hero-pill" id="revealHeroPill">
-    <img src="../assets/img/hero.png" alt="Luciana y Ariana Belotti, mentoras de Feliz de Emprender">
-  </div>
-</section>
 <div id="contenido">
-<section class="intro section">
-<div class="wrap intro-grid">
-<div>
+<section class="welcome-hero" aria-labelledby="welcome-title">
+<div class="welcome-photo"><img src="../assets/img/hero-2.png" alt="Ari y Luciana Belotti acompañando una sesión de trabajo" fetchpriority="high" width="1697" height="927"></div>
+<div class="wrap welcome-inner"><div class="welcome-copy">
 <span class="eyebrow">Feliz de Emprender · by B Process</span>
-<h1>Emprender no es <em>improvisar.</em>
-</h1>
+<h1 id="welcome-title">Emprender no es<br>improvisar.</h1>
 <h2>Es construir un negocio sólido, rentable, con futuro y propósito.</h2>
-</div>
-<div>
-<p>Tenés experiencia, conocimientos y capacidades. Te ayudamos a convertirlos en un negocio profesional o a desarrollar el que ya tenés, con estrategia, metodología y acompañamiento.</p>
-<div class="hero-actions">
-<a class="btn btn-gold" href="#cursos">Quiero empezar mi negocio →</a>
-<a class="btn btn-ghost" href="#procesos">Quiero hacer crecer mi negocio →</a>
-</div>
-</div>
-</div>
-</section>
+<p>Tenés experiencia, conocimientos y capacidades.<br>Te ayudamos a convertirlos en un negocio profesional o a desarrollar el que ya tenés, con estrategia, metodología y acompañamiento.</p>
+<div class="hero-actions"><a class="btn btn-gold" href="#cursos">Quiero empezar mi negocio <span aria-hidden="true">→</span></a><a class="btn btn-ghost" href="#procesos">Quiero hacer crecer mi negocio <span aria-hidden="true">→</span></a></div>
+</div></div></section>
 <section class="section stages" id="etapas">
 <div class="wrap">
 <div class="center-head">

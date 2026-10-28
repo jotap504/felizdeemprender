@@ -1,6 +1,6 @@
 # Rediseño FDE — primera implementación
 
-La portada conserva el hero animado y la fotografía de Quiénes somos. Se aplican los colores del mockup y se mantienen Fraunces y Libre Franklin como aproximación tipográfica. La marca en texto es una aproximación: falta el archivo original del logo para reproducirlo fielmente.
+La portada reemplaza el hero animado por una composición editorial con texto a la izquierda y la foto existente hero-2 a la derecha; conserva la fotografía de Quiénes somos. Se aplican los colores del mockup y se mantienen Fraunces y Libre Franklin como aproximación tipográfica. La marca en texto es una aproximación: falta el archivo original del logo para reproducirlo fielmente.
 
 Implementado: nueva promesa, orientación por etapa, distinción cursos/procesos, metodología como dimensiones integradas, testimonios existentes, presentación de Ari y Luciana y cierre comercial. El diagnóstico anterior se retira de la portada porque sus recomendaciones responden al catálogo anterior.
 
