@@ -1,7 +1,7 @@
 from pathlib import Path
 import re,html
 root=Path(__file__).resolve().parent.parent
-info={1:('La propuesta original','Hero animado, programas y diagnóstico interactivo.','Primera exploración'),2:('Una nueva identidad','Portada editorial, nueva estructura, movimiento y modo oscuro.','Rediseño visual'),3:('Una experiencia para participar','Mapa de orientación, metodología aplicada, historias y hoja de trabajo.','Experiencia interactiva')}
+info={4:('Órbita: tu negocio en juego','Pilotá una nave, distribuí energía y conectá una ruta para encontrar tu próximo paso.','Juego de exploración'),1:('La propuesta original','Hero animado, programas y diagnóstico interactivo.','Primera exploración'),2:('Una nueva identidad','Portada editorial, nueva estructura, movimiento y modo oscuro.','Rediseño visual'),3:('Una experiencia para participar','Mapa de orientación, metodología aplicada, historias y hoja de trabajo.','Experiencia interactiva')}
 versions=sorted([p for p in root.iterdir() if p.is_dir() and re.fullmatch(r'v\d+',p.name) and (p/'index.html').exists()],key=lambda p:int(p.name[1:]))
 cards=''
 for p in versions:
