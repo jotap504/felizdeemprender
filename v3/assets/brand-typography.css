@@ -1,0 +1,17 @@
+/* Identidad tipográfica de Feliz de Emprender; Mulish es la familia publicada como Muli. */
+body{font-family:'Mulish','Muli',Arial,sans-serif;letter-spacing:0}
+h1,h2,h3,.display,.experience-panel legend,.method-example h4{font-family:'Poppins',Arial,sans-serif;font-weight:600;letter-spacing:-.035em}
+.welcome-copy h1{font-weight:600;font-size:clamp(42px,4.6vw,64px);letter-spacing:-.05em;line-height:1.1}
+.welcome-copy h2{font-weight:500;letter-spacing:-.035em;line-height:1.3}
+.center-head h2,.section-head h2,.experience-grid h2,.about h2,.closing h2{font-weight:600;letter-spacing:-.045em;line-height:1.18}
+.path-card h3,.program-body h3,.stage-card h3,.personal h3{font-weight:600;line-height:1.35;letter-spacing:-.035em}
+.experience-panel legend{font-size:18px;line-height:1.45;letter-spacing:-.025em}
+.method-example h4{font-size:17px;line-height:1.4}.method-lab h3{line-height:1.3}
+nav.links,.eyebrow,.btn,.program-badge,.program-mode,.program-link,.dimension h3,.t-name,.case-detail summary,.footer-inner nav,.footer-bottom,.ecosystem,.stage-icon{font-family:'Lato',Arial,sans-serif}
+.eyebrow{font-weight:700}.btn,nav.links a.cta-link{font-weight:700}.dimension h3{font-weight:900}
+.brand-script{font-family:'Grechen Fuemen',cursive;font-style:normal;font-weight:400;font-size:43px;letter-spacing:-.02em;line-height:.85}
+.brand-small{font-family:'Lato',Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:0;margin-top:5px}
+.brand-sun{font-family:Arial,sans-serif;font-size:21px;letter-spacing:0;line-height:1}
+.t-mark{font-family:Georgia,serif}
+input,textarea,select,button{font-family:inherit}
+@media(max-width:600px){.welcome-copy h1{font-size:clamp(36px,9.4vw,48px);line-height:1.12}.welcome-copy h2{font-size:21px;line-height:1.35}.experience-grid h2{font-size:clamp(29px,8vw,36px)}.center-head h2,.section-head h2{font-size:clamp(29px,7.5vw,34px)}.brand-script{font-size:40px}.stage-card h3{font-size:19px}.path-card h3{font-size:24px}.program-body h3{font-size:22px}}
