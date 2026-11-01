@@ -18,3 +18,7 @@ input,textarea,select,button{font-family:inherit}
 
 /* Isotipo entregado por la marca, protegido por un fondo neutro en ambos temas. */
 .brand-with-mark{display:inline-flex;flex-direction:row;align-items:center;gap:9px;min-width:0}.brand-name{display:flex;flex-direction:column;align-items:flex-start}.brand-mark-frame{width:43px;height:53px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border-radius:9px;background:#fffdf9;border:1px solid #e9e2d5;box-shadow:0 2px 8px #163f490a}.brand-mark{filter:drop-shadow(0 0 .55px #78684d);display:block;width:auto;height:43px;max-width:35px;object-fit:contain}.footer-inner .brand-mark-frame{width:47px;height:58px}.footer-inner .brand-mark{height:47px;max-width:38px}@media(prefers-color-scheme:dark){.brand-mark-frame{background:#fffdf9;border-color:#ded4c2;box-shadow:0 2px 12px #0003}}@media(max-width:600px){.brand-mark-frame{width:40px;height:48px}.brand-mark{height:40px;max-width:32px}.brand-with-mark{gap:7px}}
+
+/* Nombre de marca como texto, junto al isotipo. */
+.brand-with-mark .brand-name{display:block;font-family:'Poppins',Arial,sans-serif;font-size:15px;line-height:1.25;font-weight:600;letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
+@media(max-width:600px){.brand-with-mark .brand-name{font-size:14px}}
