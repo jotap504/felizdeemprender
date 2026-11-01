@@ -1,6 +1,15 @@
 (function(){
  'use strict';
  var form=document.getElementById('compassForm'),result=document.getElementById('compassResult');
+ var progress=document.getElementById('pathProgress');
+ var progressNames=['stage','challenge','support'];
+ function updateProgress(){
+  var count=0;progressNames.forEach(function(name){var done=!!form.querySelector('input[name="'+name+'"]:checked');if(done)count++;var item=progress.querySelector('[data-progress="'+name+'"]');item.classList.toggle('is-complete',done);item.querySelector('.path-progress-icon').textContent=done?'✓':('0'+(progressNames.indexOf(name)+1));});
+  document.getElementById('pathProgressCount').textContent=count+' de 3 respuestas';
+  document.getElementById('pathProgressFill').style.width=(count/3*100)+'%';
+  document.getElementById('pathProgressNote').textContent=count===3?'¡Listo! Encontrá tu próximo paso.':'Cada respuesta nos ayuda a orientarte.';
+ }
+ progress.hidden=false;form.addEventListener('change',updateProgress);updateProgress();
  var actions={offer:'Escribí una frase con tres partes: a quién ayudás, qué problema resolvés y qué cambio buscás lograr. Contrastala con una persona de ese público.',focus:'Elegí un objetivo para los próximos 30 días. Definí una acción de esta semana y una señal concreta para saber si avanzaste.',systems:'Registrá durante una semana qué tareas necesitan tu intervención. Elegí una repetida y escribí cómo se hace, quién podría asumirla y cómo revisar el resultado.'};
  form.addEventListener('submit',function(e){
   e.preventDefault();var d=new FormData(form),stage=d.get('stage'),challenge=d.get('challenge'),support=d.get('support');
@@ -26,7 +35,4 @@
  var text='MI PRIMER PASO · FELIZ DE EMPRENDER\n\nBorrador para revisar y validar\n\nMi experiencia: '+d.get('skill').trim()+'\nA quién ayudo: '+d.get('audience').trim()+'\nProblema que quiero resolver: '+d.get('outcome').trim()+'\n\nMi propuesta inicial:\n'+proposal+'\n\nEsta semana voy a: '+d.get('action').trim()+'\n\nPara seguir: contrastá esta propuesta con alguien de tu público.\nhttps://jotap504.github.io/felizdeemprender/v3/';
  if(url)URL.revokeObjectURL(url);url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));download.href=url;var box=document.getElementById('worksheetResult');box.hidden=false;box.focus();});
  window.addEventListener('pagehide',function(){if(url)URL.revokeObjectURL(url);});
- // A drawn path connects the new experiences without scroll hijacking.
- var path=document.querySelector('.journey-line path');
- if(path && !matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver'in window){var io=new IntersectionObserver(function(entries){if(entries[0].isIntersecting){path.classList.add('drawn');io.disconnect();}},{threshold:.3});io.observe(path);}
 })();
